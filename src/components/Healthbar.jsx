@@ -19,8 +19,8 @@ const Heart = styled.div`
 const Healthbar = () => {
   return (
     <HealthbarStyledComponent>
-      {[...Array(3)].map(() => (
-        <Heart />
+      {[...Array(3).keys()].map(id => (
+        <Heart key={id} />
       ))}
     </HealthbarStyledComponent>
   );

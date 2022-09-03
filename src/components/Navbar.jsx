@@ -1,17 +1,25 @@
 import { colorVariables, Icon } from './BaseComponents';
 import Healthbar from './Healthbar';
 import styled from 'styled-components';
+import classNames from 'classnames';
 
 // styled components
 const NavbarStyledComponent = styled.nav`
   width: 100vw;
   height: 60px;
-  background-color: ${colorVariables.darkest};
-  border-bottom: 1px solid ${colorVariables.darker_darkest};
+  background-color: ${colorVariables.light};
+  border-bottom: 1px solid ${colorVariables.light_darker};
+  color: ${colorVariables.dark};
   user-select: none;
+
+  &.dark {
+    background-color: ${colorVariables.darkest};
+    border-bottom: 1px solid ${colorVariables.darker_darkest};
+    color: ${colorVariables.light};
+  }
 `;
 
-const NavbarSection = styled.nav`
+const NavbarSection = styled.div`
   display: inline-block;
   width: fit-content;
   box-sizing: border-box;
@@ -20,11 +28,21 @@ const NavbarSection = styled.nav`
   padding-left: 20px;
 
   &.clickable:hover {
-    background-color: ${colorVariables.darker_darkest};
+    background-color: ${colorVariables.light_darker};
   }
 
   &.divided-right {
-    border-right: 1px solid ${colorVariables.darker_darkest};
+    border-right: 1px solid ${colorVariables.light_darker};
+  }
+
+  &.dark {
+    &.clickable:hover {
+      background-color: ${colorVariables.darker_darkest};
+    }
+
+    &.divided-right {
+      border-right: 1px solid ${colorVariables.darker_darkest}; 
+    }
   }
 
   &.right {
@@ -42,11 +60,19 @@ const NavbarSection = styled.nav`
 `;
 
 // navbar component
-const Navbar = ({ sidebarOpened, setSidebarOpened }) => {
+const Navbar = ({ options, sidebarOpened, setSidebarOpened }) => {
   return (
-    <NavbarStyledComponent>
+    <NavbarStyledComponent
+      className={classNames({
+        'dark': options.dark_mode
+      })}
+    >
       <NavbarSection
-        className="clickable divided-right"
+        className={classNames(
+          'clickable','divided-right', {
+            'dark': options.dark_mode
+          }
+        )}
         onClick={() => setSidebarOpened(!sidebarOpened)}
       >
         <Icon>
