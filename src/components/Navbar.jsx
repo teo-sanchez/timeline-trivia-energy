@@ -1,4 +1,4 @@
-import { colorVariables, Button, Icon } from './BaseComponents';
+import { colorVariables, Icon } from './BaseComponents';
 import Healthbar from './Healthbar';
 import styled from 'styled-components';
 
@@ -42,12 +42,15 @@ const NavbarSection = styled.nav`
 `;
 
 // navbar component
-const Navbar = () => {
+const Navbar = ({ sidebarOpened, setSidebarOpened }) => {
   return (
     <NavbarStyledComponent>
-      <NavbarSection className="clickable divided-right">
+      <NavbarSection
+        className="clickable divided-right"
+        onClick={() => setSidebarOpened(!sidebarOpened)}
+      >
         <Icon>
-          menu
+          { sidebarOpened ? 'close' : 'menu' }
         </Icon>
       </NavbarSection>
 

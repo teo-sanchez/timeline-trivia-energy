@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 const colorVariables = {
   light: '#F3F4ED',
+  super_dark: '#171d22',
   darker_darkest: '#1d232a',
   darkest: '#222831',
   lighter_darkest: '#2a313c',
-  dark: '#393E46',
+  dark: '#383d45',
   primary: '#00ADB5',
   red: '#EA5455'
 }
