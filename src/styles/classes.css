@@ -1,0 +1,9 @@
+/* utlility classes used throughout the app */
+
+.right {
+  float: right;
+}
+
+.clickable {
+  cursor: pointer;
+}

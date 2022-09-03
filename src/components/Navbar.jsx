@@ -1,6 +1,8 @@
-import { colorVariables, Icon } from './BaseComponents';
+import { colorVariables, Button, Icon } from './BaseComponents';
+import Healthbar from './Healthbar';
 import styled from 'styled-components';
 
+// styled components
 const NavbarStyledComponent = styled.nav`
   width: 100vw;
   height: 60px;
@@ -16,12 +18,34 @@ const NavbarSection = styled.nav`
   line-height: 60px;
   font-size: 24px;
   padding-left: 20px;
+
+  &.clickable:hover {
+    background-color: ${colorVariables.darker_darkest};
+  }
+
+  &.divided-right {
+    border-right: 1px solid ${colorVariables.darker_darkest};
+  }
+
+  &.right {
+    padding-left: 0px;
+    padding-right: 20px;
+  }
+
+  &:first-of-type {
+    padding-right: 20px;
+  }
+
+  .btn {
+    margin-top: 10px;
+  }
 `;
 
+// navbar component
 const Navbar = () => {
   return (
     <NavbarStyledComponent>
-      <NavbarSection>
+      <NavbarSection className="clickable divided-right">
         <Icon>
           menu
         </Icon>
@@ -29,6 +53,10 @@ const Navbar = () => {
 
       <NavbarSection>
         Timeline Trivia
+      </NavbarSection>
+
+      <NavbarSection className="right">
+        <Healthbar />
       </NavbarSection>
     </NavbarStyledComponent>
   );
