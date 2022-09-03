@@ -9,8 +9,7 @@ import Sidebar from './components/Sidebar';
 export default function App() {
   const [sidebarOpened, setSidebarOpened] = useState(false);
   const [options, setOptions] = useState(null);
-  const [darkClass, setDarkClass] = useState('');
-
+  
   // set default options if there are none
   useEffect(() => {
     if (localStorage.getItem('options') === null) {
@@ -28,21 +27,16 @@ export default function App() {
   // update options
   useEffect(() => {
     localStorage.setItem('options', JSON.stringify(options));
-
-    // update dark class state
-    if (options !== null) {
-      if (Object.keys(options).includes('dark_mode')) {
-        setDarkClass(classNames({
-          'dark': options.dark_mode
-        }));
-      }
-    }
   }, [options]);
 
   return (
     <div className="app">
       { options && (
-        <PageContainer className={darkClass}>
+        <PageContainer
+          className={classNames({
+            'dark': options.dark_mode
+          })}
+        >
           <Navbar
             options={options}
             sidebarOpened={sidebarOpened}
