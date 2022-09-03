@@ -1,0 +1,7 @@
+/* general styles for all pages */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter';
+}
