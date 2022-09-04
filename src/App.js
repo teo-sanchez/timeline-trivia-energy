@@ -5,6 +5,8 @@ import { PageContainer, CenterContainer } from './components/BaseComponents';
 import classNames from 'classnames';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
+import CardDeck from './components/CardDeck';
+import Timeline from './components/Timeline';
 
 export default function App() {
   const [sidebarOpened, setSidebarOpened] = useState(false);
@@ -44,7 +46,9 @@ export default function App() {
           />
 
           <CenterContainer className="app">
-              
+            <CardDeck />
+
+            <Timeline />
           </CenterContainer>
 
           <Sidebar

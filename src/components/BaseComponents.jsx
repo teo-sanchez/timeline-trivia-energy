@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const colorVariables = {
+  lightest: '#fff',
   light: '#F3F4ED',
   light_darker: '#e7e8e1',
   super_dark: '#171d22',
@@ -11,7 +12,8 @@ const colorVariables = {
   primary: '#00ADB5',
   primary_darker: '#00a2ab',
   primary_darkest: '#01969e',
-  red: '#EA5455'
+  red: '#EA5455',
+  green: '#00C897'
 }
 
 const PageContainer = styled.div`
