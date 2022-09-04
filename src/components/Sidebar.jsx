@@ -1,4 +1,6 @@
 import { colorVariables } from './BaseComponents';
+import { useContext } from 'react';
+import { OptionsContext } from '../App';
 import styled from 'styled-components';
 import classNames from 'classnames';
 
@@ -85,7 +87,9 @@ const SidebarItem = styled.div`
   }
 `;
 
-const Sidebar = ({ options, setOptions, sidebarOpened, setSidebarOpened }) => {
+const Sidebar = ({ setOptions, sidebarOpened, setSidebarOpened }) => {
+  const options = useContext(OptionsContext);
+
   const closeSidebar = (e) => {
     const clickedElement = e.target;
 

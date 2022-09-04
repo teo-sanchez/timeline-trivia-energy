@@ -1,12 +1,14 @@
 import './styles/general.css';
 import './styles/classes.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createContext } from 'react';
 import { PageContainer, CenterContainer } from './components/BaseComponents';
 import classNames from 'classnames';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import CardDeck from './components/CardDeck';
 import Timeline from './components/Timeline';
+
+export const OptionsContext = createContext();
 
 export default function App() {
   const [sidebarOpened, setSidebarOpened] = useState(false);
@@ -34,30 +36,30 @@ export default function App() {
   return (
     <div className="app">
       { options && (
-        <PageContainer
-          className={classNames({
-            'dark': options.dark_mode
-          })}
-        >
-          <Navbar
-            options={options}
-            sidebarOpened={sidebarOpened}
-            setSidebarOpened={setSidebarOpened}
-          />
+        <OptionsContext.Provider value={options}>
+          <PageContainer
+            className={classNames({
+              'dark': options.dark_mode
+            })}
+          >
+            <Navbar
+              sidebarOpened={sidebarOpened}
+              setSidebarOpened={setSidebarOpened}
+            />
 
-          <CenterContainer className="app">
-            <CardDeck />
+            <CenterContainer className="app">
+              <CardDeck />
 
-            <Timeline />
-          </CenterContainer>
+              <Timeline />
+            </CenterContainer>
 
-          <Sidebar
-            options={options}
-            setOptions={setOptions}
-            sidebarOpened={sidebarOpened}
-            setSidebarOpened={setSidebarOpened}
-          />
-        </PageContainer>
+            <Sidebar
+              setOptions={setOptions}
+              sidebarOpened={sidebarOpened}
+              setSidebarOpened={setSidebarOpened}
+            />
+          </PageContainer>
+        </OptionsContext.Provider>
       )}
     </div>
   );

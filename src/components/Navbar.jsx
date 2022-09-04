@@ -1,4 +1,6 @@
 import { colorVariables, Icon } from './BaseComponents';
+import { useContext } from 'react';
+import { OptionsContext } from '../App';
 import Healthbar from './Healthbar';
 import styled from 'styled-components';
 import classNames from 'classnames';
@@ -60,7 +62,9 @@ const NavbarSection = styled.div`
 `;
 
 // navbar component
-const Navbar = ({ options, sidebarOpened, setSidebarOpened }) => {
+const Navbar = ({ sidebarOpened, setSidebarOpened }) => {
+  const options = useContext(OptionsContext);
+
   return (
     <NavbarStyledComponent
       className={classNames({

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import classNames from 'classnames';
+import { useContext } from 'react';
+import { OptionsContext } from '../App';
 import { colorVariables } from './BaseComponents';
 
 const CardStyledComponent = styled.div`
@@ -58,11 +60,32 @@ const CardStyledComponent = styled.div`
       background-color: ${colorVariables.red};
     }
   }
+
+  &.dark {
+    background-color: ${colorVariables.dark};
+    border: 1px solid ${colorVariables.darker_darkest};
+
+    .card-header, .image, .card-footer {
+      h2, p {
+        color: ${colorVariables.light};
+      }
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid ${colorVariables.darker_darkest};
+      }
+    }
+  }
 `;
 
 const Card = ({ title, description, image, question, correct_answer, answer, placed }) => {
+  const options = useContext(OptionsContext);
+
   return (
-    <CardStyledComponent>
+    <CardStyledComponent
+      className={classNames({
+        'dark': options.dark_mode
+      })}
+    >
       <div className="card-header">
         <h2>{ title }</h2>
         <p>{ description }</p>
