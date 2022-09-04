@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import classNames from 'classnames';
-import { useContext } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { OptionsContext } from '../App';
 import { colorVariables } from './BaseComponents';
+import useMouse from '../hooks/useMouse';
 
 const CardStyledComponent = styled.div`
+  position: absolute;
   width: 160px;
   height: 240px;
   background-color: ${colorVariables.lightest};
@@ -79,12 +81,52 @@ const CardStyledComponent = styled.div`
 
 const Card = ({ title, description, image, question, correct_answer, answer, placed }) => {
   const options = useContext(OptionsContext);
+  const cardRef = useRef(null);
+
+  const mousePos = useMouse();
+  const [beingMoved, setBeingMoved] = useState(false);
+  const [savedMousePos, setSavedMousePos] = useState({x: 0, y: 0});
+  const [basePos, setBasePos] = useState({x: 0, y: 0});
+
+  // set helping states when the card starts being moved
+  const startMoving = () => {
+    setBeingMoved(true);
+    // save the original mouse and card position
+    setSavedMousePos(mousePos);
+    setBasePos({x: cardRef.current.offsetLeft, y: cardRef.current.offsetTop});
+  }
+
+  // stop movement
+  const endMoving = () => {
+    setBeingMoved(false);
+  }
+
+  // card movement
+  useEffect(() => {
+    if (beingMoved) {
+      const change = {
+        x: mousePos.x - savedMousePos.x,
+        y: mousePos.y - savedMousePos.y
+      }
+
+      const currentPos = {
+        x: basePos.x + change.x,
+        y: basePos.y + change.y
+      }
+
+      cardRef.current.style.left = `${currentPos.x}px`;
+      cardRef.current.style.top = `${currentPos.y}px`;
+    }
+  }, [mousePos]);
 
   return (
     <CardStyledComponent
+      ref={cardRef}
       className={classNames({
         'dark': options.dark_mode
       })}
+      onMouseDown={startMoving}
+      onMouseUp={endMoving}
     >
       <div className="card-header">
         <h2>{ title }</h2>
