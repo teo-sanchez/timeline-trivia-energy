@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import classNames from 'classnames';
 import { useContext, useEffect, useRef, useState } from 'react';
-import { OptionsContext } from '../App';
+import { OptionsContext, TimelineContextState, TimelineContextUpdater } from '../App';
 import { colorVariables } from './BaseComponents';
 import useMouse from '../hooks/useMouse';
 
 const CardStyledComponent = styled.div`
-  position: absolute;
+  display: inline-block;
   width: 160px;
   height: 240px;
   background-color: ${colorVariables.lightest};
@@ -77,16 +77,32 @@ const CardStyledComponent = styled.div`
       }
     }
   }
+
+  &:not(:first-of-type) {
+    margin-left: 20px;
+  }
 `;
 
-const Card = ({ title, description, image, question, correct_answer, answer, placed }) => {
+const Card = ({ title, description, image, question, correct_answer, answer, placed, mouseOverTimeline }) => {
   const options = useContext(OptionsContext);
+  const [timelineState, setTimelineState] = [useContext(TimelineContextState), useContext(TimelineContextUpdater)];
   const cardRef = useRef(null);
 
   const mousePos = useMouse();
   const [beingMoved, setBeingMoved] = useState(false);
   const [savedMousePos, setSavedMousePos] = useState({x: 0, y: 0});
   const [basePos, setBasePos] = useState({x: 0, y: 0});
+
+  // add current card to the timeline
+  const addCardToTimeline = () => {
+    setTimelineState([
+      ...timelineState,
+      {
+        id: timelineState.length,
+        title, description, image, question, correct_answer, answer
+      }
+    ])
+  }
 
   // set helping states when the card starts being moved
   const startMoving = () => {
@@ -99,11 +115,19 @@ const Card = ({ title, description, image, question, correct_answer, answer, pla
   // stop movement
   const endMoving = () => {
     setBeingMoved(false);
+    if (mouseOverTimeline) {
+      addCardToTimeline();
+    }
+
+    // move card back
+    cardRef.current.style.left = `${basePos.x}px`;
+    cardRef.current.style.top = `${basePos.y}px`;
+    // TODO: set new question
   }
 
   // card movement
   useEffect(() => {
-    if (beingMoved) {
+    if (beingMoved && !placed) {
       const change = {
         x: mousePos.x - savedMousePos.x,
         y: mousePos.y - savedMousePos.y
@@ -123,7 +147,8 @@ const Card = ({ title, description, image, question, correct_answer, answer, pla
     <CardStyledComponent
       ref={cardRef}
       className={classNames({
-        'dark': options.dark_mode
+        'dark': options.dark_mode,
+        'movable-card': !placed
       })}
       onMouseDown={startMoving}
       onMouseUp={endMoving}

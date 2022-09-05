@@ -6,6 +6,7 @@ import classNames from 'classnames';
 
 const SidebarContainer = styled.div`
   position: fixed;
+  z-index: 2000;
   left: 0;
   top: 60px;
   width: 100vw;

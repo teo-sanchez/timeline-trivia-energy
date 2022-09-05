@@ -17,7 +17,7 @@ const CardDeckStyledComponent = styled.div`
   }
 `;
 
-const CardDeck = () => {
+const CardDeck = ({ mouseOverTimeline }) => {
   const options = useContext(OptionsContext);
 
   return (
@@ -26,7 +26,9 @@ const CardDeck = () => {
         'dark': options.dark_mode
       })}
     >
-      <Card />
+      <Card
+        mouseOverTimeline={mouseOverTimeline}
+      />
     </CardDeckStyledComponent>
   );
 }

@@ -1,9 +1,10 @@
-import { useState, useContext } from 'react';
-import { OptionsContext } from '../App';
+import { useContext, useRef, useEffect } from 'react';
+import { OptionsContext, TimelineContextState, TimelineContextUpdater } from '../App';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import { colorVariables } from './BaseComponents';
 import Card from './Card';
+import useMouse from '../hooks/useMouse';
 
 const TimelineStyledComponent = styled.div`
   position: absolute;
@@ -19,38 +20,58 @@ const TimelineStyledComponent = styled.div`
   }
 `;
 
-const Timeline = () => {
+const Timeline = ({ setMouseOverTimeline }) => {
   const options = useContext(OptionsContext);
+  const timelineState = useContext(TimelineContextState);
 
-  /* create the state in which cards in timeline are located;
-     assign a fake card to it */
-  const [timelineCards, setTimelineCards] = useState([{
-    id: 0,
-    title: 'Title',
-    description: 'description',
-    image: null,
-    question: 'created',
-    answer: 0,
-    correct_answer: true,
-    placed: true
-  }]);
+  const timelineRef = useRef(null);
+  const mousePos = useMouse();
+
+  /* onMouseOver cannot be used as the user is already hovering over a card,
+     therefore we need to catch the correct position manually */
+  const getTimelinePosition = () => {
+    return {
+      x: timelineRef.current.offsetLeft,
+      y: timelineRef.current.offsetTop
+    };
+  }
+
+  const getTimelineSize = () => {
+    return {
+      width: timelineRef.current.offsetWidth,
+      height: timelineRef.current.offsetHeight
+    };
+  }
+
+  // function to check whether a point is inside a rectangle or not
+  const pointInRectangle = (pointX, pointY, rectX, rectY, width, height) => {
+    if (pointX >= rectX && pointX <= rectX + width) {
+      if (pointY >= rectY && pointY <= rectY + height) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  // check if cursor is over the timeline on each render
+  useEffect(() => {
+    const {x: rectX, y: rectY} = getTimelinePosition();
+    const {width, height} = getTimelineSize();
+    const {x: pointX, y: pointY} = mousePos;
+    setMouseOverTimeline(pointInRectangle(pointX, pointY, rectX, rectY, width, height));
+  })
 
   return (
     <TimelineStyledComponent
+      ref={timelineRef}
       className={classNames({
         'dark': options.dark_mode
       })}
     >
-      {timelineCards.map(card => (
+      {timelineState.map(card => (
         <Card
           key={card.id}
-          title={card.title}
-          description={card.description}
-          image={card.image}
-          question={card.question}
-          correct_answer={card.correct_answer}
-          answer={card.answer}
-          placed={card.placed}
+          placed={true}
         />
       ))}
     </TimelineStyledComponent>
