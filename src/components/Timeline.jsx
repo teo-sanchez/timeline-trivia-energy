@@ -1,26 +1,31 @@
-import { useContext, useRef, useEffect } from 'react';
+import { useState, useContext, useRef, useEffect } from 'react';
 import { CardsJsonContext, OptionsContext, TimelineContextState, TimelineContextUpdater } from '../App';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import { colorVariables } from './BaseComponents';
 import Card from './Card';
+import FakeCard from './FakeCard';
 import useMouse from '../hooks/useMouse';
+import { useScroll } from 'react-use';
 
 const TimelineStyledComponent = styled.div`
   position: absolute;
   left: 10vw;
   bottom: 20px;
-  width: 80vw;
+  width: calc(80vw - 40px);
   height: 240px;
   padding: 20px;
   border: 1px solid ${colorVariables.light_darker};
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
 
   &.dark {
     border: 1px solid ${colorVariables.darker_darkest};
   }
 `;
 
-const Timeline = ({ setMouseOverTimeline }) => {
+const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, holdingCard }) => {
   const options = useContext(OptionsContext);
   const cardsJson = useContext(CardsJsonContext);
   const [timelineState, setTimelineState] = [useContext(TimelineContextState), useContext(TimelineContextUpdater)];
@@ -75,7 +80,26 @@ const Timeline = ({ setMouseOverTimeline }) => {
     const {width, height} = getTimelineSize();
     const {x: pointX, y: pointY} = mousePos;
     setMouseOverTimeline(pointInRectangle(pointX, pointY, rectX, rectY, width, height));
-  })
+  }, [mousePos]);
+
+  // scrolling
+  const { x: timelineScrollX } = useScroll(timelineRef);
+  const [timelineMouseX, setTimelineMouseX] = useState(0);
+
+  useEffect(() => {
+    const timelineProperties = {
+      start: timelineRef.current.offsetLeft,
+      width: timelineRef.current.offsetWidth + timelineScrollX
+    };
+
+    const calculatedTimelineMouseX = mousePos.x - timelineProperties.start + timelineScrollX;
+
+    if (calculatedTimelineMouseX >= 0 && calculatedTimelineMouseX <= timelineProperties.width) {
+      if (mouseOverTimeline) {
+        setTimelineMouseX(calculatedTimelineMouseX);
+      }
+    }
+  }, [mousePos]);
 
   return (
     <TimelineStyledComponent

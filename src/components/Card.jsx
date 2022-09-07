@@ -13,7 +13,7 @@ const CardStyledComponent = styled.div`
   border: 1px solid ${colorVariables.light_darker};
   border-radius: 4px;
   user-select: none;
-  cursor: grab;
+  white-space: normal;
 
   .card-header, .image, .card-footer {
     width: 100%;
@@ -81,6 +81,7 @@ const CardStyledComponent = styled.div`
   &.movable-card {
     position: absolute;
     z-index: 1000;
+    cursor: grab;
   }
 
   &:not(:first-of-type) {
@@ -88,7 +89,7 @@ const CardStyledComponent = styled.div`
   }
 `;
 
-const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly }) => {
+const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, setHoldingCard }) => {
   const options = useContext(OptionsContext);
   const [timelineState, setTimelineState] = [useContext(TimelineContextState), useContext(TimelineContextUpdater)];
   const cardRef = useRef(null);
@@ -166,6 +167,7 @@ const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly }) => {
   // set helping states when the card starts being moved
   const startMoving = () => {
     setBeingMoved(true);
+    setHoldingCard(true);
     // save the original mouse and card position
     setSavedMousePos(mousePos);
     setBasePos({x: cardRef.current.offsetLeft, y: cardRef.current.offsetTop});
@@ -174,6 +176,7 @@ const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly }) => {
   // stop movement
   const endMoving = () => {
     setBeingMoved(false);
+    setHoldingCard(false);
     if (mouseOverTimeline) {
       // add the moved card to the timeline
       addCardToTimeline();

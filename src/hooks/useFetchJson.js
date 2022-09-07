@@ -7,17 +7,17 @@ const useFetchJson = (url) => {
   useEffect(() => {
     fetch(url)
       .then(res => {
-        return res.json()
+        return res.json();
       })
       .then(res => {
-        setResponse(res)
+        setResponse(res);
       })
       .catch(err => {
-        setError(err)
+        setError(err);
       })
-  }, [])
+  }, []);
 
-  return [response, error]
+  return [response, error];
 }
 
 export default useFetchJson;

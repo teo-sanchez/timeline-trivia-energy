@@ -17,7 +17,7 @@ const CardDeckStyledComponent = styled.div`
   }
 `;
 
-const CardDeck = ({ mouseOverTimeline }) => {
+const CardDeck = ({ mouseOverTimeline, setHoldingCard }) => {
   const options = useContext(OptionsContext);
 
   return (
@@ -28,6 +28,7 @@ const CardDeck = ({ mouseOverTimeline }) => {
     >
       <Card
         mouseOverTimeline={mouseOverTimeline}
+        setHoldingCard={setHoldingCard}
       />
     </CardDeckStyledComponent>
   );
