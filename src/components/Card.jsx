@@ -100,7 +100,7 @@ const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly }) => {
     const cardIndex = Math.floor(Math.random() * cardsJson.length);
     const newCard = cardsJson[cardIndex];
     // check if selected card is already in the timeline; we don't want that
-    const alreadyExists = timelineState.some(card => card.properties.title === newCard.title)
+    const alreadyExists = timelineState.some(card => card.properties.title === newCard.title);
 
     if (!alreadyExists) {
       return newCard;

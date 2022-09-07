@@ -677,5 +677,474 @@
         "description": "striking clock in London",
         "answer": 1843,
         "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Clock_Tower_-_Palace_of_Westminster%2C_London_-_May_2007.jpg/800px-Clock_Tower_-_Palace_of_Westminster%2C_London_-_May_2007.jpg"
+    },
+    {
+        "type": "started",
+        "title": "Victorian era",
+        "description": "period of Queen Victoria reign",
+        "answer": 1837,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Queen_Victoria_-_Winterhalter_1859.jpg/800px-Queen_Victoria_-_Winterhalter_1859.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Gregor Mendel",
+        "description": "biologist",
+        "answer": 1822,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Gregor_Mendel_2.jpg/800px-Gregor_Mendel_2.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Karl Marx",
+        "description": "German philosopher and economist",
+        "answer": 1818,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Karl_Marx_001.jpg/800px-Karl_Marx_001.jpg"
+    },
+    {
+        "type": "happened",
+        "title": "Battle of Waterloo",
+        "description": "the battle in which Napoleon was defeated",
+        "answer": 1815,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/7/72/Battle_of_Waterloo_1815.PNG"
+    },
+    {
+        "type": "written",
+        "title": "Pride and Prejudice",
+        "description": "novel by Jane Austen",
+        "answer": 1813,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/PrideAndPrejudiceTitlePage.jpg/800px-PrideAndPrejudiceTitlePage.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Charles Darwin",
+        "description": "English biologist",
+        "answer": 1809,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Charles_Darwin_seated_crop.jpg/800px-Charles_Darwin_seated_crop.jpg"
+    },
+    {
+        "type": "happened",
+        "title": "Battle of Trafalgar",
+        "description": "naval battle",
+        "answer": 1805,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Battle_of_Trafalgar%2C_21_October_1805.png"
+    },
+    {
+        "type": "happened",
+        "title": "Louisiana Purchase",
+        "description": "US acquisition of Louisina from France",
+        "answer": 1803,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Louisiana_Purchase.jpg/1280px-Louisiana_Purchase.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Alexander Pushkin",
+        "description": "Russian poet, playwright and novelist",
+        "answer": 1799,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Kiprensky_Pushkin.jpg/800px-Kiprensky_Pushkin.jpg"
+    },
+    {
+        "type": "built",
+        "title": "White House",
+        "description": "official residence of the president of the US",
+        "answer": 1792,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/White_House_north_and_south_sides.jpg/800px-White_House_north_and_south_sides.jpg"
+    },
+    {
+        "type": "started",
+        "title": "French Revolution",
+        "description": "period of political and social changes in France",
+        "answer": 1789,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Anonymous_-_Prise_de_la_Bastille.jpg/1280px-Anonymous_-_Prise_de_la_Bastille.jpg"
+    },
+    {
+        "type": "ratified",
+        "title": "Declaration of Independence",
+        "description": "founding document of the US",
+        "answer": 1776,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/United_States_Declaration_of_Independence.jpg/800px-United_States_Declaration_of_Independence.jpg"
+    },
+    {
+        "type": "happened",
+        "title": "Boston Tea Party",
+        "description": "American protest",
+        "answer": 1773,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Boston_Tea_Party_w.jpg/1920px-Boston_Tea_Party_w.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Napoleon Bonaparte",
+        "description": "French military and political leader",
+        "answer": 1769,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg/800px-Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg"
+    },
+    {
+        "type": "started",
+        "title": "Industrial Revolution",
+        "description": "transition to new manufacturing processes",
+        "answer": 1760,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Powerloom_weaving_in_1835.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Wolfgang Amadeus Mozart",
+        "description": "classical composer",
+        "answer": 1756,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/4/47/Croce-Mozart-Detail.jpg"
+    },
+    {
+        "type": "discovered",
+        "title": "electricity",
+        "description": "physical phenomena",
+        "answer": 1752,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/London_MMB_%C2%BB1E6_Lightning.jpg/800px-London_MMB_%C2%BB1E6_Lightning.jpg"
+    },
+    {
+        "type": "born",
+        "title": "George Washington",
+        "description": "1st president of the US",
+        "answer": 1732,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg/800px-Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg"
+    },
+    {
+        "type": "created",
+        "title": "Russian Empire",
+        "description": "historical country",
+        "answer": 1721,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Imperial_Standard_of_the_Emperor_of_Russia_%281858%E2%80%931917%29.svg/1280px-Imperial_Standard_of_the_Emperor_of_Russia_%281858%E2%80%931917%29.svg.png"
+    },
+    {
+        "type": "built",
+        "title": "Buckingham Palace",
+        "description": "residence of the monarch of the UK",
+        "answer": 1703,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Buckingham_Palace_from_side%2C_London%2C_UK_-_Diliff.jpg/1920px-Buckingham_Palace_from_side%2C_London%2C_UK_-_Diliff.jpg"
+    },
+    {
+        "type": "extinct",
+        "title": "Dodo",
+        "description": "extinct flightless bird",
+        "answer": 1690,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oxford_Dodo_display.jpg/1920px-Oxford_Dodo_display.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Isaac Newton",
+        "description": "English physicist",
+        "answer": 1643,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Portrait_of_Sir_Isaac_Newton%2C_1689.jpg/800px-Portrait_of_Sir_Isaac_Newton%2C_1689.jpg"
+    },
+    {
+        "type": "built",
+        "title": "Taj Mahal",
+        "description": "marble mausoleum",
+        "answer": 1632,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Taj_Mahal_in_India_-_Kristian_Bertel.jpg/1280px-Taj_Mahal_in_India_-_Kristian_Bertel.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Blaise Pascal",
+        "description": "French mathematician",
+        "answer": 1623,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Blaise_Pascal_Versailles.JPG/800px-Blaise_Pascal_Versailles.JPG"
+    },
+    {
+        "type": "born",
+        "title": "Molière",
+        "description": "French playwright and actor",
+        "answer": 1622,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Pierre_Mignard_-_Portrait_de_Jean-Baptiste_Poquelin_dit_Moli%C3%A8re_%281622-1673%29_-_Google_Art_Project_%28cropped%29.jpg/800px-Pierre_Mignard_-_Portrait_de_Jean-Baptiste_Poquelin_dit_Moli%C3%A8re_%281622-1673%29_-_Google_Art_Project_%28cropped%29.jpg"
+    },
+    {
+        "type": "created",
+        "title": "British Empire",
+        "description": "territories that the UK used to rule over",
+        "answer": 1603,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/The_British_Empire.png/1920px-The_British_Empire.png"
+    },
+    {
+        "type": "written",
+        "title": "Romeo and Juliet",
+        "description": "tragedy written by Shakespeare",
+        "answer": 1595,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/5/55/Romeo_and_juliet_brown.jpg"
+    },
+    {
+        "type": "born",
+        "title": "William Shakespeare",
+        "description": "English playwright and poet",
+        "answer": 1564,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/800px-Shakespeare.jpg"
+    },
+    {
+        "type": "founded",
+        "title": "Swedish Empire",
+        "description": "historical country",
+        "answer": 1611,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Naval_Ensign_of_Sweden.svg/1920px-Naval_Ensign_of_Sweden.svg.png"
+    },
+    {
+        "type": "painted",
+        "title": "Mona Lisa",
+        "description": "painting by Leonardo da Vinci",
+        "answer": 1503,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/800px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
+    },
+    {
+        "type": "happened",
+        "title": "Discovery of America",
+        "description": "first visit of America by Europeans",
+        "answer": 1492,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Viajes_de_colon_en.svg/1280px-Viajes_de_colon_en.svg.png"
+    },
+    {
+        "type": "started",
+        "title": "War of the Roses",
+        "description": "civil wars fought over the British throne",
+        "answer": 1455,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Plucking_the_Red_and_White_Roses%2C_by_Henry_Payne.jpg/1024px-Plucking_the_Red_and_White_Roses%2C_by_Henry_Payne.jpg"
+    },
+    {
+        "type": "happened",
+        "title": "Fall of Constantinopole",
+        "description": "capture of the capital of the Byzantine Empire",
+        "answer": 1453,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Le_si%C3%A8ge_de_Constantinople_%281453%29_by_Jean_Le_Tavernier_after_1455.jpg/800px-Le_si%C3%A8ge_de_Constantinople_%281453%29_by_Jean_Le_Tavernier_after_1455.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Leonardo da Vinci",
+        "description": "Italian painter, engineer and scientist",
+        "answer": 1452,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Francesco_Melzi_-_Portrait_of_Leonardo.png/800px-Francesco_Melzi_-_Portrait_of_Leonardo.png"
+    },
+    {
+        "type": "invented",
+        "title": "Letterpress printing",
+        "description": "technique of relief printing",
+        "answer": 1440,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/The_Caxton_Celebration_-_William_Caxton_showing_specimens_of_his_printing_to_King_Edward_IV_and_his_Queen.jpg/1920px-The_Caxton_Celebration_-_William_Caxton_showing_specimens_of_his_printing_to_King_Edward_IV_and_his_Queen.jpg"
+    },
+    {
+        "type": "happened",
+        "title": "Trial of Joan of Arc",
+        "description": "Joan of Arc sentenced to death",
+        "answer": 1431,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Joan_of_arc_interrogation.jpg/800px-Joan_of_arc_interrogation.jpg"
+    },
+    {
+        "type": "built",
+        "title": "Charles Bridge",
+        "description": "medieval stone arch bridge in Prague",
+        "answer": 1402,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Charles_Bridge_-_Prague%2C_Czech_Republic_-_panoramio.jpg/1920px-Charles_Bridge_-_Prague%2C_Czech_Republic_-_panoramio.jpg"
+    },
+    {
+        "type": "started",
+        "title": "Black Death",
+        "description": "bubonic plague pandemic in Europe",
+        "answer": 1346,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/1346-1353_spread_of_the_Black_Death_in_Europe_map.svg/1024px-1346-1353_spread_of_the_Black_Death_in_Europe_map.svg.png"
+    },
+    {
+        "type": "started",
+        "title": "Hundred Years War",
+        "description": "series of conflicts between England and France",
+        "answer": 1337,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Hundred_years_war_collage.jpg/1024px-Hundred_years_war_collage.jpg"
+    },
+    {
+        "type": "created",
+        "title": "Ottoman Empire",
+        "description": "historical country",
+        "answer": 1299,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/OttomanEmpireMain.png/1280px-OttomanEmpireMain.png"
+    },
+    {
+        "type": "born",
+        "title": "Marco Polo",
+        "description": "Venetian explorer",
+        "answer": 1254,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Marco_Polo_-_costume_tartare.jpg/800px-Marco_Polo_-_costume_tartare.jpg"
+    },
+    {
+        "type": "started",
+        "title": "Mongol invasion of Europe",
+        "description": "the conquest of Europe by Mongols",
+        "answer": 1236,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Genghis_Khan_empire-en.svg/1920px-Genghis_Khan_empire-en.svg.png"
+    },
+    {
+        "type": "signed",
+        "title": "Magna Carta",
+        "description": "charter of rights",
+        "answer": 1215,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Magna_Carta_%28British_Library_Cotton_MS_Augustus_II.106%29.jpg/1280px-Magna_Carta_%28British_Library_Cotton_MS_Augustus_II.106%29.jpg"
+    },
+    {
+        "type": "created",
+        "title": "Mongol Empire",
+        "description": "largest empire in history",
+        "answer": 1206,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/f/f4/MongolEmpire.jpg"
+    },
+    {
+        "type": "built",
+        "title": "Leaning Tower of Pisa",
+        "description": "freestanding bell tower",
+        "answer": 1173,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/The_Leaning_Tower_of_Pisa_SB.jpeg/800px-The_Leaning_Tower_of_Pisa_SB.jpeg"
+    },
+    {
+        "type": "born",
+        "title": "Genghis Khan",
+        "description": "founder of the Mongol Empire",
+        "answer": 1162,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/YuanEmperorAlbumGenghisPortrait.jpg/800px-YuanEmperorAlbumGenghisPortrait.jpg"
+    },
+    {
+        "type": "happened",
+        "title": "Battle of Hastings",
+        "description": "Norman conquest of England",
+        "answer": 1066,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Bayeux_Tapestry_scene57_Harold_death.jpg/1024px-Bayeux_Tapestry_scene57_Harold_death.jpg"
+    },
+    {
+        "type": "invented",
+        "title": "Gunpowder",
+        "description": "earliest known chemical explosive",
+        "answer": 1044,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Black_Powder-1.JPG/1280px-Black_Powder-1.JPG"
+    },
+    {
+        "type": "created",
+        "title": "Holy Roman Empire",
+        "description": "historical country",
+        "answer": 962,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Banner_of_the_Holy_Roman_Emperor_with_haloes_%281400-1806%29.svg/1920px-Banner_of_the_Holy_Roman_Emperor_with_haloes_%281400-1806%29.svg.png"
+    },
+    {
+        "type": "built",
+        "title": "Prague Castle",
+        "description": "castle complex in Prague",
+        "answer": 880,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Czech-2013-Prague-View_from_Charles_Bridge_of_Prague_Castle.jpg/1024px-Czech-2013-Prague-View_from_Charles_Bridge_of_Prague_Castle.jpg"
+    },
+    {
+        "type": "created",
+        "title": "Kievan Rus",
+        "description": "historical country in Eastern Europe",
+        "answer": 862,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Location_of_Kyivan_Rus.png/1024px-Location_of_Kyivan_Rus.png"
+    },
+    {
+        "type": "created",
+        "title": "Great Moravian Empire",
+        "description": "first West Slavic country in Central Europe",
+        "answer": 833,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Great_Moravia_during_Svatopluk_%28en%29.svg/1280px-Great_Moravia_during_Svatopluk_%28en%29.svg.png"
+    },
+    {
+        "type": "invented",
+        "title": "Paper",
+        "description": "thin sheet material",
+        "answer": 105,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Various_products_made_from_paper.JPG/1280px-Various_products_made_from_paper.JPG"
+    },
+    {
+        "type": "happened",
+        "title": "Pompeii eruption",
+        "description": "one of the deadliest eruoptions in European history",
+        "answer": 79,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Destruction_of_Pompeii_and_Herculaneum.jpg/1920px-Destruction_of_Pompeii_and_Herculaneum.jpg"
+    },
+    {
+        "type": "created",
+        "title": "Roman Empire",
+        "description": "historical country",
+        "answer": -27,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Vexilloid_of_the_Roman_Empire.svg/800px-Vexilloid_of_the_Roman_Empire.svg.png"
+    },
+    {
+        "type": "born",
+        "title": "Julius Caesar",
+        "description": "Roman general and statesman",
+        "answer": -100,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Retrato_de_Julio_C%C3%A9sar_%2826724093101%29_%28cropped%29.jpg/800px-Retrato_de_Julio_C%C3%A9sar_%2826724093101%29_%28cropped%29.jpg"
+    },
+    {
+        "type": "created",
+        "title": "Rosetta Stone",
+        "description": "a stele composed of granodiorite",
+        "answer": -196,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Rosetta_Stone.JPG/800px-Rosetta_Stone.JPG"
+    },
+    {
+        "type": "born",
+        "title": "Archimedes",
+        "description": "Greek mathematician and astronomer",
+        "answer": -287,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Domenico-Fetti_Archimedes_1620.jpg/800px-Domenico-Fetti_Archimedes_1620.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Alexander the Great",
+        "description": "king of the ancient Greek kingdom of Macedon",
+        "answer": -356,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Alexander_the_Great_mosaic.jpg/1920px-Alexander_the_Great_mosaic.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Aristotle",
+        "description": "Greek philosopher and polymath",
+        "answer": -384,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Aristotle_Altemps_Inv8575.jpg/800px-Aristotle_Altemps_Inv8575.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Pythagoras",
+        "description": "Ionian Greek philosopher",
+        "answer": -570,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Pythagoras_in_the_Roman_Forum%2C_Colosseum.jpg/800px-Pythagoras_in_the_Roman_Forum%2C_Colosseum.jpg"
+    },
+    {
+        "type": "founded",
+        "title": "Rome",
+        "description": "the capital of the Roman Empire",
+        "answer": -753,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Kapitolinische_W%C3%B6lfin_Museum_Capitolini.jpg/1280px-Kapitolinische_W%C3%B6lfin_Museum_Capitolini.jpg"
+    },
+    {
+        "type": "created",
+        "title": "Babylonian Empire",
+        "description": "historical country",
+        "answer": -1792,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Hammurabi%27s_Babylonia_1.svg/1024px-Hammurabi%27s_Babylonia_1.svg.png"
+    },
+    {
+        "type": "extinct",
+        "title": "Mammoth",
+        "description": "extinct species",
+        "answer": -2500,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Mammuthus_columbi_Page.jpg/1280px-Mammuthus_columbi_Page.jpg"
+    },
+    {
+        "type": "built",
+        "title": "Pyramid of Djoser",
+        "description": "first pyramid built by Egyptians",
+        "answer": -2650,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Saqqara_pyramid_ver_2.jpg/1280px-Saqqara_pyramid_ver_2.jpg"
+    },
+    {
+        "type": "invented",
+        "title": "Egyptian hieroglyphs",
+        "description": "first writing system",
+        "answer": -3200,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Hieroglyphs_from_the_tomb_of_Seti_I.jpg"
+    },
+    {
+        "type": "invented",
+        "title": "Wheel",
+        "description": "circular component",
+        "answer": -3500,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/3/32/Roue_primitive.png"
     }
 ]
