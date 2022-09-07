@@ -1,5 +1,5 @@
 import { useContext, useRef, useEffect } from 'react';
-import { OptionsContext, TimelineContextState, TimelineContextUpdater } from '../App';
+import { CardsJsonContext, OptionsContext, TimelineContextState, TimelineContextUpdater } from '../App';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import { colorVariables } from './BaseComponents';
@@ -22,7 +22,23 @@ const TimelineStyledComponent = styled.div`
 
 const Timeline = ({ setMouseOverTimeline }) => {
   const options = useContext(OptionsContext);
-  const timelineState = useContext(TimelineContextState);
+  const cardsJson = useContext(CardsJsonContext);
+  const [timelineState, setTimelineState] = [useContext(TimelineContextState), useContext(TimelineContextUpdater)];
+
+  // add a random card to the timeline on timeline mount
+  useEffect(() => {
+    const randomCard = cardsJson[Math.floor(Math.random() * cardsJson.length)];
+
+    setTimelineState([
+      ...timelineState,
+      {
+        id: timelineState.length,
+        properties: {
+          ...randomCard
+        }
+      }
+    ]);
+  }, []);
 
   const timelineRef = useRef(null);
   const mousePos = useMouse();
