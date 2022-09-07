@@ -1,0 +1,681 @@
+[
+    {
+        "type": "launched",
+        "title": "Webb Space Telescope",
+        "description": "space telescope",
+        "answer": 2021,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/James_Webb_Space_Telescope_2009_top.jpg/1280px-James_Webb_Space_Telescope_2009_top.jpg"
+    },
+    {
+        "type": "became president",
+        "title": "Joe Biden",
+        "description": "46th president of the US",
+        "answer": 2021,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/800px-Joe_Biden_presidential_portrait.jpg"
+    },
+    {
+        "type": "happened",
+        "title": "Brexit",
+        "description": "withdrawal of the UK from the EU",
+        "answer": 2020,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Flag_of_brexit.svg/1280px-Flag_of_brexit.svg.png"
+    },
+    {
+        "type": "became PM",
+        "title": "Boris Johnson",
+        "description": "former leader of the Conservative Party",
+        "answer": 2019,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Boris_Johnson_official_portrait_%28cropped%29.jpg/800px-Boris_Johnson_official_portrait_%28cropped%29.jpg"
+    },
+    {
+        "type": "became president",
+        "title": "Donald Trump",
+        "description": "45th president of the US",
+        "answer": 2017,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/800px-Donald_Trump_official_portrait.jpg"
+    },
+    {
+        "type": "released",
+        "title": "Windows 10",
+        "description": "operating system",
+        "answer": 2015,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/en/5/50/Windows_10_Home_Version_21H1_Desktop.png"
+    },
+    {
+        "type": "became president",
+        "title": "Barack Obama",
+        "description": "44th president of the US",
+        "answer": 2009,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/800px-President_Barack_Obama.jpg"
+    },
+    {
+        "type": "released",
+        "title": "Google Chrome",
+        "description": "web browser",
+        "answer": 2008,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/1024px-Google_Chrome_icon_%28February_2022%29.svg.png"
+    },
+    {
+        "type": "started",
+        "title": "Great Recession",
+        "description": "financial crisis",
+        "answer": 2007,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/GDP_Real_Growth_in_2009.svg/1920px-GDP_Real_Growth_in_2009.svg.png"
+    },
+    {
+        "type": "released",
+        "title": "iPhone",
+        "description": "first smartphone from Apple",
+        "answer": 2007,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/9/9e/IPhone_First_Generation_8GB_%283677961514%29.jpg"
+    },
+    {
+        "type": "founded",
+        "title": "Montenegro",
+        "description": "country in Europe",
+        "answer": 2006,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Flag_of_Montenegro.svg/1920px-Flag_of_Montenegro.svg.png"
+    },
+    {
+        "type": "became chancellor",
+        "title": "Angela Merkel",
+        "description": "former German chancellor",
+        "answer": 2005,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Angela_Merkel._Tallinn_Digital_Summit.jpg"
+    },
+    {
+        "type": "founded",
+        "title": "Facebook",
+        "description": "social network",
+        "answer": 2004,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/1024px-2021_Facebook_icon.svg.png"
+    },
+    {
+        "type": "started",
+        "title": "SARS outbreak",
+        "description": "outbreak starting from China",
+        "answer": 2002,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/c/cf/SARS_virion.gif"
+    },
+    {
+        "type": "happened",
+        "title": "September 11 attacks",
+        "description": "attack against the United States",
+        "answer": 2001,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/WTC_smoking_on_9-11.jpeg/1280px-WTC_smoking_on_9-11.jpeg"
+    },
+    {
+        "type": "launched",
+        "title": "Euro",
+        "description": "official currency of the EU",
+        "answer": 1999,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Euro_coins_and_banknotes.jpg/1280px-Euro_coins_and_banknotes.jpg"
+    },
+    {
+        "type": "founded",
+        "title": "Google",
+        "description": "search engine",
+        "answer": 1998,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Googleplex_HQ_%28cropped%29.jpg/1280px-Googleplex_HQ_%28cropped%29.jpg"
+    },
+    {
+        "type": "built",
+        "title": "London Eye",
+        "description": "observation wheel",
+        "answer": 1998,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/London-Eye-2009.JPG/1280px-London-Eye-2009.JPG"
+    },
+    {
+        "type": "invented",
+        "title": "Java",
+        "description": "programming language",
+        "answer": 1995,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png"
+    },
+    {
+        "type": "born",
+        "title": "Dua Lipa",
+        "description": "singer",
+        "answer": 1995,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/DuaLipaO2020522_%28101_of_110%29_%2852052470251%29_%28cropped%29.jpg/800px-DuaLipaO2020522_%28101_of_110%29_%2852052470251%29_%28cropped%29.jpg"
+    },
+    {
+        "type": "became president",
+        "title": "Nelson Mandela",
+        "description": "first president of South Africa",
+        "answer": 1994,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Nelson_Mandela_1994.jpg/800px-Nelson_Mandela_1994.jpg"
+    },
+    {
+        "type": "founded",
+        "title": "European Union",
+        "description": "a political and economic union",
+        "answer": 1993,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1920px-Flag_of_Europe.svg.png"
+    },
+    {
+        "type": "happened",
+        "title": "Dissolution of Czechoslovakia",
+        "description": "split of Czechoslovakia",
+        "answer": 1992,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Czechoslovakia.png"
+    },
+    {
+        "type": "happened",
+        "title": "Dissolution of the USSR",
+        "description": "end of the USSR",
+        "answer": 1991,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/en/3/31/Lowering_the_Soviet_Flag.png"
+    },
+    {
+        "type": "released",
+        "title": "Linux",
+        "description": "open-source operating system",
+        "answer": 1991,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/800px-Tux.svg.png"
+    },
+    {
+        "type": "started",
+        "title": "Breakup of Yugoslavia",
+        "description": "series of wars leading to split of Yugoslavia",
+        "answer": 1991,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/8/89/Former_Yugoslavia_2008.PNG"
+    },
+    {
+        "type": "launched",
+        "title": "Hubble Space Telescope",
+        "description": "space telescope",
+        "answer": 1990,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HST-SM4.jpeg/1280px-HST-SM4.jpeg"
+    },
+    {
+        "type": "happened",
+        "title": "Fall of the Berlin Wall",
+        "description": "event that marked the end of the Iron Curtain",
+        "answer": 1989,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/1/1c/West_and_East_Germans_at_the_Brandenburg_Gate_in_1989.jpg"
+    },
+    {
+        "type": "invented",
+        "title": "World Wide Web",
+        "description": "information system",
+        "answer": 1989,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/WWW-LetShare.svg/1024px-WWW-LetShare.svg.png"
+    },
+    {
+        "type": "happened",
+        "title": "Velvet Revolution",
+        "description": "transition of power in Czechoslovakia",
+        "answer": 1989,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Praha_1989-11-25%2C_Letn%C3%A1%2C_dav_%2801%29.jpg/1280px-Praha_1989-11-25%2C_Letn%C3%A1%2C_dav_%2801%29.jpg"
+    },
+    {
+        "type": "founded",
+        "title": "Nirvana",
+        "description": "American rock band",
+        "answer": 1987,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/1/19/Nirvana_around_1992.jpg"
+    },
+    {
+        "type": "happened",
+        "title": "Chernobyl disaster",
+        "description": "nuclear accident",
+        "answer": 1986,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/IAEA_02790015_%285613115146%29.jpg/800px-IAEA_02790015_%285613115146%29.jpg"
+    },
+    {
+        "type": "founded",
+        "title": "Green Day",
+        "description": "American rock band",
+        "answer": 1986,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/6/60/Green_Day_-_Hella_Mega_Tour_-_August_10%2C_2021.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Lady Gaga",
+        "description": "singer",
+        "answer": 1986,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Lady_Gaga_at_Joe_Biden%27s_inauguration_%28cropped_5%29.jpg/800px-Lady_Gaga_at_Joe_Biden%27s_inauguration_%28cropped_5%29.jpg"
+    },
+    {
+        "type": "invented",
+        "title": "Internet",
+        "description": "system of interconnected computer networks",
+        "answer": 1983,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Internet_map_1024_-_transparent%2C_inverted.png/1024px-Internet_map_1024_-_transparent%2C_inverted.png"
+    },
+    {
+        "type": "founded",
+        "title": "U2",
+        "description": "Irish rock band",
+        "answer": 1976,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/U2_on_Joshua_Tree_Tour_2017_Brussels_8-1-17.jpg/1920px-U2_on_Joshua_Tree_Tour_2017_Brussels_8-1-17.jpg"
+    },
+    {
+        "type": "founded",
+        "title": "Microsoft",
+        "description": "technology corporation",
+        "answer": 1975,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Building92microsoft.jpg/1280px-Building92microsoft.jpg"
+    },
+    {
+        "type": "released",
+        "title": "C",
+        "description": "programming language",
+        "answer": 1972,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/The_C_Programming_Language%2C_First_Edition_Cover.svg/800px-The_C_Programming_Language%2C_First_Edition_Cover.svg.png"
+    },
+    {
+        "type": "founded",
+        "title": "ABBA",
+        "description": "Swedish band",
+        "answer": 1972,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/c/cb/ABBA_-_TopPop_1974_5.png"
+    },
+    {
+        "type": "founded",
+        "title": "Queen",
+        "description": "British rock band",
+        "answer": 1970,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/3/33/Queen_%E2%80%93_montagem_%E2%80%93_new.png"
+    },
+    {
+        "type": "launched",
+        "title": "Apollo 11",
+        "description": "American spaceflight",
+        "answer": 1969,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Aldrin_Apollo_11_original.jpg/1024px-Aldrin_Apollo_11_original.jpg"
+    },
+    {
+        "type": "happened",
+        "title": "Prague Spring",
+        "description": "attempt to liberalize Czechoslovakia",
+        "answer": 1968,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/10_Soviet_Invasion_of_Czechoslovakia_-_Flickr_-_The_Central_Intelligence_Agency.jpg/1280px-10_Soviet_Invasion_of_Czechoslovakia_-_Flickr_-_The_Central_Intelligence_Agency.jpg"
+    },
+    {
+        "type": "started",
+        "title": "The Troubles",
+        "description": "conflict in Northern Ireland",
+        "answer": 1968,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/en/c/c4/1991_Mortar_attack_on_Downing_Street.jpg"
+    },
+    {
+        "type": "founded",
+        "title": "Led Zeppelin",
+        "description": "English rock band",
+        "answer": 1968,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/4/49/LedZeppelinmontage.jpg"
+    },
+    {
+        "type": "founded",
+        "title": "Pink Floyd",
+        "description": "English rock band",
+        "answer": 1964,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/en/d/d6/Pink_Floyd_-_all_members.jpg"
+    },
+    {
+        "type": "happened",
+        "title": "Assassination of J. F. Kennedy",
+        "description": "attack on the 35th president of the US",
+        "answer": 1963,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/JFK_limousine.png/1280px-JFK_limousine.png"
+    },
+    {
+        "type": "founded",
+        "title": "The Rolling Stones",
+        "description": "English rock band",
+        "answer": 1962,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/1/10/The_Rolling_Stones_Summerfest_in_Milwaukee_-_2015.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Madonna",
+        "description": "singer",
+        "answer": 1958,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Madonna_Rebel_Heart_Tour_2015_-_Stockholm_%2823051472299%29_%28cropped%29.jpg/800px-Madonna_Rebel_Heart_Tour_2015_-_Stockholm_%2823051472299%29_%28cropped%29.jpg"
+    },
+    {
+        "type": "founded",
+        "title": "The Beatles",
+        "description": "English rock band",
+        "answer": 1957,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/The_Fabs.JPG/1024px-The_Fabs.JPG"
+    },
+    {
+        "type": "started",
+        "title": "Vietnam War",
+        "description": "conflict in Vietnam, Laos and Cambodia",
+        "answer": 1955,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/4/43/VNWarMontage.png"
+    },
+    {
+        "type": "born",
+        "title": "Oprah Winfrey",
+        "description": "American talk show host",
+        "answer": 1954,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Oprah_in_2014.jpg/800px-Oprah_in_2014.jpg"
+    },
+    {
+        "type": "became queen",
+        "title": "Elizabeth II.",
+        "description": "Queen of the United Kingdom",
+        "answer": 1953,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Queen_Elizabeth_II_in_March_2015.jpg/800px-Queen_Elizabeth_II_in_March_2015.jpg"
+    },
+    {
+        "type": "started",
+        "title": "Cuban Revolution",
+        "description": "revolt against military dictatorship in Cuba",
+        "answer": 1953,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Fidel_Castro_and_his_men_in_the_Sierra_Maestra.jpg"
+    },
+    {
+        "type": "started",
+        "title": "Korean War",
+        "description": "conflict between North and South Korea",
+        "answer": 1950,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Korean_War_Montage_2.png/800px-Korean_War_Montage_2.png"
+    },
+    {
+        "type": "founded",
+        "title": "NATO",
+        "description": "military alliance",
+        "answer": 1949,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/NATO_OTAN_landscape_logo.svg/1920px-NATO_OTAN_landscape_logo.svg.png"
+    },
+    {
+        "type": "written",
+        "title": 1984,
+        "description": "dystopian novel",
+        "answer": 1949,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/1984first.jpg/800px-1984first.jpg"
+    },
+    {
+        "type": "written",
+        "title": "Animal Farm",
+        "description": "allegorical novel",
+        "answer": 1945,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Animal_Farm_-_1st_edition.jpg"
+    },
+    {
+        "type": "invented",
+        "title": "ENIAC",
+        "description": "the first computer",
+        "answer": 1943,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/ENIAC_Penn1.jpg/1280px-ENIAC_Penn1.jpg"
+    },
+    {
+        "type": "started",
+        "title": "World War II.",
+        "description": "global conflict",
+        "answer": 1939,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Warsaw_Old_Town_1945.jpg/1920px-Warsaw_Old_Town_1945.jpg"
+    },
+    {
+        "type": "signed",
+        "title": "Munich Agreement",
+        "description": "agreement between the UK, France, Italy and Germany",
+        "answer": 1938,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Bundesarchiv_Bild_183-R69173%2C_M%C3%BCnchener_Abkommen%2C_Staatschefs.jpg"
+    },
+    {
+        "type": "founded",
+        "title": "Republic of Ireland",
+        "description": "country in Europe",
+        "answer": 1937,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Flag_of_Ireland.svg/1920px-Flag_of_Ireland.svg.png"
+    },
+    {
+        "type": "started",
+        "title": "Spanish Civil War",
+        "description": "civil war in Spain",
+        "answer": 1936,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Collage_guerra_civile_spagnola.png"
+    },
+    {
+        "type": "born",
+        "title": "Elvis Presley",
+        "description": "American singer",
+        "answer": 1935,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Elvis_Presley_promoting_Jailhouse_Rock.jpg/800px-Elvis_Presley_promoting_Jailhouse_Rock.jpg"
+    },
+    {
+        "type": "built",
+        "title": "Golden Gate Bridge",
+        "description": "bridge in San Francisco",
+        "answer": 1933,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Golden_Gate_Bridge_.JPG/1280px-Golden_Gate_Bridge_.JPG"
+    },
+    {
+        "type": "created",
+        "title": "Commonwealth of Nations",
+        "description": "political association",
+        "answer": 1931,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/Commonwealth_Flag_2013.svg/1920px-Commonwealth_Flag_2013.svg.png"
+    },
+    {
+        "type": "started",
+        "title": "Great Depression",
+        "description": "financial crisis",
+        "answer": 1929,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Bank_of_the_United_States_failure_NYWTS.jpg/1920px-Bank_of_the_United_States_failure_NYWTS.jpg"
+    },
+    {
+        "type": "discovered",
+        "title": "Penicillin",
+        "description": "group of antibiotics",
+        "answer": 1928,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Penicillin-G_3D.png/1920px-Penicillin-G_3D.png"
+    },
+    {
+        "type": "invented",
+        "title": "Television",
+        "description": "telecommunication medium",
+        "answer": 1927,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Cptvdisplay.jpg/1280px-Cptvdisplay.jpg"
+    },
+    {
+        "type": "built",
+        "title": "Mount Rushmore",
+        "description": "colossal sculpture",
+        "answer": 1927,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Mount_Rushmore_National_Treasure.jpg/1280px-Mount_Rushmore_National_Treasure.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Marilyn Monroe",
+        "description": "American actress",
+        "answer": 1926,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Monroecirca1953.jpg/800px-Monroecirca1953.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Fidel Castro",
+        "description": "Cuban revolutionary",
+        "answer": 1926,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Fidel_Castro_1950s.jpg"
+    },
+    {
+        "type": "signed",
+        "title": "Treaty of Trianon",
+        "description": "treaty of peace",
+        "answer": 1920,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Ethno_Hung.1910.png/1024px-Ethno_Hung.1910.png"
+    },
+    {
+        "type": "signed",
+        "title": "Treaty of Versailles",
+        "description": "treaty of peace",
+        "answer": 1919,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/German_losses_after_WWI.svg/1024px-German_losses_after_WWI.svg.png"
+    },
+    {
+        "type": "happened",
+        "title": "Russian Revolution",
+        "description": "socialist revolution in the Russian Empire",
+        "answer": 1917,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/f/f7/19170704_Riot_on_Nevsky_prosp_Petrograd.jpg"
+    },
+    {
+        "type": "started",
+        "title": "World War I.",
+        "description": "global conflict",
+        "answer": 1914,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/2/20/WWImontage.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Alan Turing",
+        "description": "mathematician, computer scientist",
+        "answer": 1912,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Alan_Turing_Aged_16.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Salvador Dalí",
+        "description": "surrealist artist",
+        "answer": 1904,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Dali_Allan_Warren.jpg/1024px-Dali_Allan_Warren.jpg"
+    },
+    {
+        "type": "started",
+        "title": "Construction of Panama Canal",
+        "description": "waterway connecting Atlantic and Pacific Ocean",
+        "answer": 1904,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Panama_Canal_Map_EN.png/1024px-Panama_Canal_Map_EN.png"
+    },
+    {
+        "type": "painted",
+        "title": "The Scream",
+        "description": "expressionist painting",
+        "answer": 1893,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg/800px-Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg"
+    },
+    {
+        "type": "built",
+        "title": "Eiffel Tower",
+        "description": "tower in Paris",
+        "answer": 1887,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg/800px-Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg"
+    },
+    {
+        "type": "built",
+        "title": "Tower Bridge",
+        "description": "bridge in London",
+        "answer": 1886,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Tower_Bridge_from_Shad_Thames.jpg/1920px-Tower_Bridge_from_Shad_Thames.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Franz Kafka",
+        "description": "German-speaking Bohemian novelist",
+        "answer": 1883,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Franz_Kafka%2C_1923.jpg/800px-Franz_Kafka%2C_1923.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Pablo Picasso",
+        "description": "Spanish painter",
+        "answer": 1881,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Portrait_de_Picasso%2C_1908.jpg"
+    },
+    {
+        "type": "invented",
+        "title": "Telephone",
+        "description": "telecommunications device",
+        "answer": 1876,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Telefon_BW_2012-02-18_13-44-32.JPG/1280px-Telefon_BW_2012-02-18_13-44-32.JPG"
+    },
+    {
+        "type": "opened",
+        "title": "Suez Canal",
+        "description": "waterway in Egypt",
+        "answer": 1869,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/6/6e/SuezCanal-EO.JPG"
+    },
+    {
+        "type": "created",
+        "title": "Empire of Japan",
+        "description": "historical country",
+        "answer": 1868,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Japan_%281870%E2%80%931999%29.svg/1280px-Flag_of_Japan_%281870%E2%80%931999%29.svg.png"
+    },
+    {
+        "type": "created",
+        "title": "Austria-Hungary",
+        "description": "historical country",
+        "answer": 1867,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Political_map_of_the_Ausgleich.jpg/1280px-Political_map_of_the_Ausgleich.jpg"
+    },
+    {
+        "type": "ratified",
+        "title": "Alaska Purchase",
+        "description": "acquisition of Alaska by the US",
+        "answer": 1867,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Alaska_Purchase_%28hi-res%29.jpg/1920px-Alaska_Purchase_%28hi-res%29.jpg"
+    },
+    {
+        "type": "written",
+        "title": "Crime and Punishment",
+        "description": "novel written by Dostoevsky",
+        "answer": 1866,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/en/4/4b/Crimeandpunishmentcover.png"
+    },
+    {
+        "type": "started",
+        "title": "American Civil War",
+        "description": "civil war between the North and the South",
+        "answer": 1861,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/c/c7/CivilWarUSAColl.png"
+    },
+    {
+        "type": "founded",
+        "title": "Kingdom of Italy",
+        "description": "historical country",
+        "answer": 1861,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Italy_%281861-1946%29_crowned.svg/1920px-Flag_of_Italy_%281861-1946%29_crowned.svg.png"
+    },
+    {
+        "type": "born",
+        "title": "Sigmund Freud",
+        "description": "the founder of psychoanalysis",
+        "answer": 1856,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Sigmund_Freud%2C_by_Max_Halberstadt_%28cropped%29.jpg/800px-Sigmund_Freud%2C_by_Max_Halberstadt_%28cropped%29.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Oscar Wilde",
+        "description": "Irish poet and playwright",
+        "answer": 1854,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Oscar_Wilde_3g07095u-adjust.jpg/800px-Oscar_Wilde_3g07095u-adjust.jpg"
+    },
+    {
+        "type": "born",
+        "title": "Vincent van Gogh",
+        "description": "Dutch impressionist painter",
+        "answer": 1853,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg/800px-Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg"
+    },
+    {
+        "type": "founded",
+        "title": "Wells Fargo",
+        "description": "American bank",
+        "answer": 1852,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Wells_Fargo_Logo_%282020%29.svg/800px-Wells_Fargo_Logo_%282020%29.svg.png"
+    },
+    {
+        "type": "written",
+        "title": "The Communist Manifesto",
+        "description": "political book",
+        "answer": 1848,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/8/86/Communist-manifesto.png"
+    },
+    {
+        "type": "built",
+        "title": "Big Ben",
+        "description": "striking clock in London",
+        "answer": 1843,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Clock_Tower_-_Palace_of_Westminster%2C_London_-_May_2007.jpg/800px-Clock_Tower_-_Palace_of_Westminster%2C_London_-_May_2007.jpg"
+    }
+]

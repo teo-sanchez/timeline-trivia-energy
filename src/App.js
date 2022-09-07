@@ -1,7 +1,8 @@
 import './styles/general.css';
 import './styles/classes.css';
-import { useState, useEffect, createContext, useRef } from 'react';
+import { useState, useEffect, createContext } from 'react';
 import { PageContainer, CenterContainer } from './components/BaseComponents';
+import useFetchJson from './hooks/useFetchJson';
 import classNames from 'classnames';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
@@ -11,8 +12,11 @@ import Timeline from './components/Timeline';
 export const OptionsContext = createContext();
 export const TimelineContextState = createContext();
 export const TimelineContextUpdater = createContext();
+export const CardsJsonContext = createContext();
 
 export default function App() {
+  const [cardsJson, cardsError] = useFetchJson("/json/cards.json");
+
   const [sidebarOpened, setSidebarOpened] = useState(false);
   const [mouseOverTimeline, setMouseOverTimeline] = useState(false);
   const [timelineState, setTimelineState] = useState([]);
@@ -39,39 +43,41 @@ export default function App() {
 
   return (
     <div className="app">
-      { options && (
-        <TimelineContextState.Provider value={timelineState}>
-          <TimelineContextUpdater.Provider value={setTimelineState}>
-            <OptionsContext.Provider value={options}>
-              <PageContainer
-                className={classNames({
-                  'dark': options.dark_mode
-                })}
-              >
-                <Navbar
-                  sidebarOpened={sidebarOpened}
-                  setSidebarOpened={setSidebarOpened}
-                />
-
-                <CenterContainer className="app">
-                  <CardDeck
-                    mouseOverTimeline={mouseOverTimeline}
+      { options && cardsJson && (
+        <CardsJsonContext.Provider value={cardsJson}>
+          <TimelineContextState.Provider value={timelineState}>
+            <TimelineContextUpdater.Provider value={setTimelineState}>
+              <OptionsContext.Provider value={options}>
+                <PageContainer
+                  className={classNames({
+                    'dark': options.dark_mode
+                  })}
+                >
+                  <Navbar
+                    sidebarOpened={sidebarOpened}
+                    setSidebarOpened={setSidebarOpened}
                   />
 
-                  <Timeline
-                    setMouseOverTimeline={setMouseOverTimeline}
-                  />
-                </CenterContainer>
+                  <CenterContainer className="app">
+                    <CardDeck
+                      mouseOverTimeline={mouseOverTimeline}
+                    />
 
-                <Sidebar
-                  setOptions={setOptions}
-                  sidebarOpened={sidebarOpened}
-                  setSidebarOpened={setSidebarOpened}
-                />
-              </PageContainer>
-            </OptionsContext.Provider>
-          </TimelineContextUpdater.Provider>
-        </TimelineContextState.Provider>
+                    <Timeline
+                      setMouseOverTimeline={setMouseOverTimeline}
+                    />
+                  </CenterContainer>
+
+                  <Sidebar
+                    setOptions={setOptions}
+                    sidebarOpened={sidebarOpened}
+                    setSidebarOpened={setSidebarOpened}
+                  />
+                </PageContainer>
+              </OptionsContext.Provider>
+            </TimelineContextUpdater.Provider>
+          </TimelineContextState.Provider>
+        </CardsJsonContext.Provider>
       )}
     </div>
   );

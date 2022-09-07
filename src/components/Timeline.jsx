@@ -69,9 +69,11 @@ const Timeline = ({ setMouseOverTimeline }) => {
       })}
     >
       {timelineState.map(card => (
-        <Card
+        <Card 
           key={card.id}
+          properties={card.properties}
           placed={true}
+          placedCorrectly={true}
         />
       ))}
     </TimelineStyledComponent>

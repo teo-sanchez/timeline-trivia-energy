@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import classNames from 'classnames';
 import { useContext, useEffect, useRef, useState } from 'react';
-import { OptionsContext, TimelineContextState, TimelineContextUpdater } from '../App';
+import { OptionsContext, TimelineContextState, TimelineContextUpdater, CardsJsonContext } from '../App';
 import { colorVariables } from './BaseComponents';
 import useMouse from '../hooks/useMouse';
 
@@ -25,22 +25,22 @@ const CardStyledComponent = styled.div`
   }
 
   .card-header {
-    height: 60px;
+    height: 90px;
     padding: 10px;
 
     h2 {
-      font-size: 16px;
+      font-size: 14px;
       color: ${colorVariables.darker_darkest};
     }
 
     p {
-      font-size: 14px;
+      font-size: 12px;
       color: ${colorVariables.dark};
     }
   }
 
   .image {
-    height: 150px;
+    height: 120px;
     background-size: cover;
   }
 
@@ -78,15 +78,63 @@ const CardStyledComponent = styled.div`
     }
   }
 
+  &.movable-card {
+    position: absolute;
+    z-index: 1000;
+  }
+
   &:not(:first-of-type) {
     margin-left: 20px;
   }
 `;
 
-const Card = ({ title, description, image, question, correct_answer, answer, placed, mouseOverTimeline }) => {
+const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly }) => {
   const options = useContext(OptionsContext);
   const [timelineState, setTimelineState] = [useContext(TimelineContextState), useContext(TimelineContextUpdater)];
   const cardRef = useRef(null);
+
+  const cardsJson = useContext(CardsJsonContext);
+  const [cardProperties, setCardProperties] = useState({});
+
+  const getRandomCard = () => {
+    const cardIndex = Math.floor(Math.random() * cardsJson.length);
+    return cardsJson[cardIndex];
+  }
+
+  // set card properties
+  const setProperties = (defaultProperties) => {
+    // if no properties are set, set to random card
+    if (defaultProperties === undefined) {
+      const randomCard = getRandomCard();
+      
+      /*
+        keys:
+          type - shown in card footer; can also be used as a question
+          title - shown in card header
+          description - below title
+          answer - used to decide whether the user was correct
+          imagelink - link to related image
+      */
+
+      setCardProperties({
+        ...randomCard
+      });
+    } else {
+      setCardProperties({
+        ...defaultProperties
+      });
+    }
+  };
+
+  useEffect(() => {
+    // if the properties prop is set, set properties accordingly
+    if (properties !== undefined) {
+      setProperties(properties);
+    } else {
+      // otherwise set random properties
+      setProperties();
+    }
+  }, []);
 
   const mousePos = useMouse();
   const [beingMoved, setBeingMoved] = useState(false);
@@ -99,7 +147,9 @@ const Card = ({ title, description, image, question, correct_answer, answer, pla
       ...timelineState,
       {
         id: timelineState.length,
-        title, description, image, question, correct_answer, answer
+        properties: {
+          ...cardProperties
+        }
       }
     ])
   }
@@ -116,13 +166,15 @@ const Card = ({ title, description, image, question, correct_answer, answer, pla
   const endMoving = () => {
     setBeingMoved(false);
     if (mouseOverTimeline) {
+      // add the moved card to the timeline
       addCardToTimeline();
+      // generate new properties
+      setProperties();
     }
 
-    // move card back
+    // move card back to deck
     cardRef.current.style.left = `${basePos.x}px`;
     cardRef.current.style.top = `${basePos.y}px`;
-    // TODO: set new question
   }
 
   // card movement
@@ -154,14 +206,14 @@ const Card = ({ title, description, image, question, correct_answer, answer, pla
       onMouseUp={endMoving}
     >
       <div className="card-header">
-        <h2>{ title }</h2>
-        <p>{ description }</p>
+        <h2>{ cardProperties.title }</h2>
+        <p>{ cardProperties.description }</p>
       </div>
 
       <div
         className="image"
         style={{
-          backgroundImage: `url(${image})`
+          backgroundImage: `url(${cardProperties.imagelink})`
         }}>
       </div>
 
@@ -169,16 +221,16 @@ const Card = ({ title, description, image, question, correct_answer, answer, pla
       <div
         className={classNames(
           "card-footer", {
-            'correct': placed && correct_answer,
-            'incorrect': placed && !correct_answer
+            'correct': placed && placedCorrectly,
+            'incorrect': placed && !placedCorrectly
           }
         )}
       >
         { /* show either the answer or the question; depends on whether the card is placed */ }
         { placed ? (
-          answer
+          cardProperties.answer
         ) : (
-          question
+          cardProperties.type
         )}
       </div>
     </CardStyledComponent>
