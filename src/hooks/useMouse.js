@@ -1,23 +1,22 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const useMouse = () => {
   // state
   const [mousePos, setMousePos] = useState({x: 0, y: 0});
 
-  // get current mouse pos
-  const getMousePos = e => {
-    return {x: e.clientX, y: e.clientY};
-  }
+  const updateMousePos = e => {
+    setMousePos({x: e.clientX, y: e.clientY});
+  };
 
   // change state accordingly
   useEffect(() => {
-    document.addEventListener('mousemove', e => setMousePos(getMousePos(e)))
+    document.addEventListener('mousemove', updateMousePos)
 
     // cleanup
     return () => {
-      document.removeEventListener('mousemove', e => setMousePos(getMousePos(e)))
+      document.removeEventListener('mousemove', updateMousePos)
     }
-  });
+  }, []);
 
   return mousePos;
 }

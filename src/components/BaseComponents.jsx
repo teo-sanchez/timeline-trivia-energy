@@ -4,6 +4,7 @@ const colorVariables = {
   lightest: '#fff',
   light: '#F3F4ED',
   light_darker: '#e7e8e1',
+  light_darkest: '#d6d7cf',
   super_dark: '#171d22',
   darker_darkest: '#1d232a',
   darkest: '#222831',

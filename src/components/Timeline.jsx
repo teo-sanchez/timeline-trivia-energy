@@ -16,12 +16,30 @@ const TimelineStyledComponent = styled.div`
   height: 240px;
   padding: 20px;
   border: 1px solid ${colorVariables.light_darker};
-  overflow-x: auto;
+  overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
 
+  &::-webkit-scrollbar-thumb {
+    background-color: ${colorVariables.light_darker};
+    border: 1px solid ${colorVariables.light_darkest};
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: ${colorVariables.light_darkest};
+  }
+
   &.dark {
     border: 1px solid ${colorVariables.darker_darkest};
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${colorVariables.darkest};
+      border: 1px solid ${colorVariables.darker_darkest};
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: ${colorVariables.darker_darkest};
+    }
   }
 `;
 
