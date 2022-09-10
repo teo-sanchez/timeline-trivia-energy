@@ -154,33 +154,9 @@ const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, setHoldi
   // add current card to the timeline
   const addCardToTimeline = () => {
     const getCorrectPosition = (answer) => {
-      if (timelineState.length > 1) {
-        const firstAnswer = timelineState[0].properties.answer;
-        const lastAnswer = timelineState[0].properties.answer;
-
-        // check if the answer belongs to the very beginning
-        if (answer < firstAnswer) {
-          return 0;
-        }
-
-        // check if the answer belongs to the very end
-        if (answer > lastAnswer) {
-          return timelineState.length-1;
-        }
-
-        // compare all cards in the middle
-        for (let pos = 1; pos < timelineState.length; pos++) {
-          const compareAnswer = timelineState[pos].properties.answer;
-
-          if (answer > compareAnswer) {
-            return pos;
-          }
-        }
-      } else {
-        // if there is only one card in the timeline, then
-        const compareAnswer = timelineState[0].properties.answer;
-        return answer <= compareAnswer ? 0 : 1;
-      }
+      const currentAnswers = timelineState.map(card => card.properties.answer);
+      const sortedAnswers = [...currentAnswers, answer].sort((a, b) => a - b);
+      return sortedAnswers.indexOf(answer);
     }
 
     const isPlacedCorrectly = (answer, pos) => {
@@ -188,7 +164,15 @@ const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, setHoldi
     }
 
     const cardWidth = 180;
-    const position = Math.floor(timelineMouseX / cardWidth);
+    const position = (() => {
+      const realPosition = Math.floor(timelineMouseX / cardWidth);
+
+      if (realPosition > timelineState.length) {
+        return timelineState.length;
+      } else {
+        return realPosition;
+      }
+    })();
 
     let newTimelineState = [...timelineState];
 
@@ -198,13 +182,12 @@ const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, setHoldi
       placed_correctly: isPlacedCorrectly(cardProperties.answer, position)
     };
 
-    // insert the card to the calculated index in timeline
-    newTimelineState.splice(position, 0, card);
+    // insert card to the correct position regardless of answer correctness
+    const correctPosition = getCorrectPosition(cardProperties.answer);
+    newTimelineState.splice(correctPosition, 0, card);
 
     // commit changes
     setTimelineState(newTimelineState);
-
-    console.log(timelineState);
   }
 
   // set helping states when the card starts being moved
