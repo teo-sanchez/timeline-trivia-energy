@@ -36,6 +36,16 @@ const CenterContainer = styled.div`
   height: auto;
 `;
 
+const ShadowContainer = styled.div`
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 60px;
+  width: 100vw;
+  height: calc(100vh - 60px);
+  background-color: rgba(0, 0, 0, 0.5);
+`;
+
 const Button = styled.div.attrs(() => ({
   className: 'btn'
 }))`
@@ -48,6 +58,16 @@ const Button = styled.div.attrs(() => ({
   font-size: 18px;
   line-height: 40px;
   padding: 0 10px 0 10px;
+  user-select: none;
+  cursor: pointer;
+
+  span.material-symbols-outlined {
+    padding-left: 10px;
+  }
+
+  &:hover {
+    background-color: ${colorVariables.primary_darker};
+  }
 `;
 
 const Icon = styled.span.attrs(() => ({
@@ -56,4 +76,4 @@ const Icon = styled.span.attrs(() => ({
   vertical-align: middle;
 `;
 
-export { colorVariables, PageContainer, CenterContainer, Button, Icon };
+export { colorVariables, PageContainer, CenterContainer, ShadowContainer, Button, Icon };

@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import CardDeck from './components/CardDeck';
 import Timeline from './components/Timeline';
+import GameoverDialog from './components/GameoverDialog';
 
 export const OptionsContext = createContext();
 export const TimelineContextState = createContext();
@@ -19,10 +20,11 @@ export default function App() {
 
   const [sidebarOpened, setSidebarOpened] = useState(false);
   const [mouseOverTimeline, setMouseOverTimeline] = useState(false);
-  const [holdingCard, setHoldingCard] = useState(false);
   const [timelineState, setTimelineState] = useState([]);
   const [timelineMouseX, setTimelineMouseX] = useState(0);
   const [health, setHealth] = useState(3);
+  const [score, setScore] = useState(0);
+  const [gameover, setGameover] = useState(false);
   const [options, setOptions] = useState(null);
 
   // set default options if there are none
@@ -44,6 +46,21 @@ export default function App() {
     localStorage.setItem('options', JSON.stringify(options));
   }, [options]);
 
+  // gameover when player is out of health
+  useEffect(() => {
+    if (health <= 0) {
+      setGameover(true);
+    }
+  }, [health]);
+
+  // reset game function
+  const resetGame = () => {
+    setScore(0);
+    setHealth(3);
+    setTimelineState([]);
+    setGameover(false);
+  };
+
   return (
     <div className="app">
       { options && cardsJson && (
@@ -60,15 +77,18 @@ export default function App() {
                     sidebarOpened={sidebarOpened}
                     setSidebarOpened={setSidebarOpened}
                     health={health}
+                    gameover={gameover}
+                    resetGame={resetGame}
                   />
 
                   <CenterContainer className="app">
                     <CardDeck
                       mouseOverTimeline={mouseOverTimeline}
                       timelineMouseX={timelineMouseX}
-                      setHoldingCard={setHoldingCard}
                       health={health}
                       setHealth={setHealth}
+                      score={score}
+                      setScore={setScore}
                     />
 
                     <Timeline
@@ -83,6 +103,13 @@ export default function App() {
                     sidebarOpened={sidebarOpened}
                     setSidebarOpened={setSidebarOpened}
                   />
+
+                  { gameover &&
+                    <GameoverDialog
+                      score={score}
+                      resetGame={resetGame}
+                    />
+                  }
                 </PageContainer>
               </OptionsContext.Provider>
             </TimelineContextUpdater.Provider>

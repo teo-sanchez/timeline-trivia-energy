@@ -89,7 +89,8 @@ const CardStyledComponent = styled.div`
   }
 `;
 
-const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, setHoldingCard, timelineMouseX, health, setHealth }) => {
+const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, timelineMouseX,
+                health, setHealth, score, setScore }) => {
   const options = useContext(OptionsContext);
   const [timelineState, setTimelineState] = [useContext(TimelineContextState), useContext(TimelineContextUpdater)];
   const cardRef = useRef(null);
@@ -182,8 +183,10 @@ const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, setHoldi
       placed_correctly: isPlacedCorrectly(cardProperties.answer, position)
     };
 
-    // if the card isn't correct, take 1 health
-    if (!card.placed_correctly) {
+    // if the card is correct, add 1 to score; otherwise, take 1 heart
+    if (card.placed_correctly) {
+      setScore(score+1);
+    } else {
       setHealth(health-1);
     }
 
@@ -198,9 +201,8 @@ const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, setHoldi
   // set helping states when the card starts being moved
   const startMoving = () => {
     // check if the card can be held <=> is in the deck
-    if (setHoldingCard !== undefined) {
+    if (!placed) {
       setBeingMoved(true);
-      setHoldingCard(true);
       // save the original mouse and card position
       setSavedMousePos(mousePos);
       setBasePos({x: cardRef.current.offsetLeft, y: cardRef.current.offsetTop});
@@ -209,9 +211,8 @@ const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, setHoldi
 
   // stop movement
   const endMoving = () => {
-    if (setHoldingCard !== undefined) {
+    if (!placed) {
       setBeingMoved(false);
-      setHoldingCard(false);
       if (mouseOverTimeline) {
         // add the moved card to the timeline
         addCardToTimeline();

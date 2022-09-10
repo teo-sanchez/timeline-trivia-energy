@@ -3,16 +3,7 @@ import { useContext } from 'react';
 import { OptionsContext } from '../App';
 import styled from 'styled-components';
 import classNames from 'classnames';
-
-const SidebarContainer = styled.div`
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 60px;
-  width: 100vw;
-  height: calc(100vh - 60px);
-  background-color: rgba(0, 0, 0, 0.5);
-`;
+import { ShadowContainer } from './BaseComponents';
 
 const SidebarStyledComponent = styled.div`
   position: fixed;
@@ -110,7 +101,7 @@ const Sidebar = ({ setOptions, sidebarOpened, setSidebarOpened }) => {
   return (
     <div>
       { sidebarOpened && (
-        <SidebarContainer
+        <ShadowContainer
           className="sidebar-container"
           onClick={closeSidebar}
         >
@@ -138,7 +129,7 @@ const Sidebar = ({ setOptions, sidebarOpened, setSidebarOpened }) => {
               </div>
             </SidebarItem>
           </SidebarStyledComponent>
-        </SidebarContainer>
+        </ShadowContainer>
       )}
     </div>
   );

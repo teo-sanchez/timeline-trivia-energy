@@ -17,7 +17,8 @@ const CardDeckStyledComponent = styled.div`
   }
 `;
 
-const CardDeck = ({ mouseOverTimeline, timelineMouseX, setHoldingCard, health, setHealth }) => {
+const CardDeck = ({ mouseOverTimeline, timelineMouseX, health, setHealth,
+                    score, setScore }) => {
   const options = useContext(OptionsContext);
 
   return (
@@ -29,9 +30,10 @@ const CardDeck = ({ mouseOverTimeline, timelineMouseX, setHoldingCard, health, s
       <Card
         mouseOverTimeline={mouseOverTimeline}
         timelineMouseX={timelineMouseX}
-        setHoldingCard={setHoldingCard}
         health={health}
         setHealth={setHealth}
+        score={score}
+        setScore={setScore}
       />
     </CardDeckStyledComponent>
   );

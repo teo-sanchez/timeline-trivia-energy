@@ -62,8 +62,19 @@ const NavbarSection = styled.div`
 `;
 
 // navbar component
-const Navbar = ({ sidebarOpened, setSidebarOpened, health }) => {
+const Navbar = ({ sidebarOpened, setSidebarOpened, health, gameover, resetGame }) => {
   const options = useContext(OptionsContext);
+
+  const sidebarSwitchAction = () => {
+    /* reset the game if gameover dialog is active,
+       as there can't be both the dialog and the sidebar
+       on the screen */
+    if (gameover) {
+      resetGame();
+    }
+
+    setSidebarOpened(!sidebarOpened);
+  };
 
   return (
     <NavbarStyledComponent
@@ -77,7 +88,7 @@ const Navbar = ({ sidebarOpened, setSidebarOpened, health }) => {
             'dark': options.dark_mode
           }
         )}
-        onClick={() => setSidebarOpened(!sidebarOpened)}
+        onClick={sidebarSwitchAction}
       >
         <Icon>
           { sidebarOpened ? 'close' : 'menu' }

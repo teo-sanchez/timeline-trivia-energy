@@ -48,21 +48,23 @@ const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, setTimelineMouseX }
   const cardsJson = useContext(CardsJsonContext);
   const [timelineState, setTimelineState] = [useContext(TimelineContextState), useContext(TimelineContextUpdater)];
 
-  // add a random card to the timeline on timeline mount
+  // add a random card to the timeline if there aren't any
   useEffect(() => {
-    const randomCard = cardsJson[Math.floor(Math.random() * cardsJson.length)];
+    if (timelineState.length < 1) {
+      const randomCard = cardsJson[Math.floor(Math.random() * cardsJson.length)];
 
-    setTimelineState([
-      ...timelineState,
-      {
-        id: timelineState.length,
-        properties: {
-          ...randomCard
-        },
-        placed_correctly: true
-      }
-    ]);
-  }, []);
+      setTimelineState([
+        ...timelineState,
+        {
+          id: timelineState.length,
+          properties: {
+            ...randomCard
+          },
+          placed_correctly: true
+        }
+      ]);
+    }
+  }, [timelineState]);
 
   const timelineRef = useRef(null);
   const mousePos = useMouse();
