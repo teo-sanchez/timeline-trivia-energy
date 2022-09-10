@@ -43,7 +43,7 @@ const TimelineStyledComponent = styled.div`
   }
 `;
 
-const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, holdingCard }) => {
+const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, setTimelineMouseX }) => {
   const options = useContext(OptionsContext);
   const cardsJson = useContext(CardsJsonContext);
   const [timelineState, setTimelineState] = [useContext(TimelineContextState), useContext(TimelineContextUpdater)];
@@ -58,7 +58,8 @@ const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, holdingCard }) => {
         id: timelineState.length,
         properties: {
           ...randomCard
-        }
+        },
+        placed_correctly: true
       }
     ]);
   }, []);
@@ -102,7 +103,6 @@ const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, holdingCard }) => {
 
   // scrolling
   const { x: timelineScrollX } = useScroll(timelineRef);
-  const [timelineMouseX, setTimelineMouseX] = useState(0);
 
   useEffect(() => {
     const timelineProperties = {
@@ -131,7 +131,7 @@ const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, holdingCard }) => {
           key={card.id}
           properties={card.properties}
           placed={true}
-          placedCorrectly={true}
+          placedCorrectly={card.placed_correctly}
         />
       ))}
     </TimelineStyledComponent>

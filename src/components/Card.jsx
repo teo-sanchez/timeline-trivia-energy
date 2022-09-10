@@ -89,7 +89,7 @@ const CardStyledComponent = styled.div`
   }
 `;
 
-const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, setHoldingCard }) => {
+const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, setHoldingCard, timelineMouseX }) => {
   const options = useContext(OptionsContext);
   const [timelineState, setTimelineState] = [useContext(TimelineContextState), useContext(TimelineContextUpdater)];
   const cardRef = useRef(null);
@@ -153,40 +153,88 @@ const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, setHoldi
 
   // add current card to the timeline
   const addCardToTimeline = () => {
-    setTimelineState([
-      ...timelineState,
-      {
-        id: timelineState.length,
-        properties: {
-          ...cardProperties
+    const getCorrectPosition = (answer) => {
+      if (timelineState.length > 1) {
+        const firstAnswer = timelineState[0].properties.answer;
+        const lastAnswer = timelineState[0].properties.answer;
+
+        // check if the answer belongs to the very beginning
+        if (answer < firstAnswer) {
+          return 0;
         }
+
+        // check if the answer belongs to the very end
+        if (answer > lastAnswer) {
+          return timelineState.length-1;
+        }
+
+        // compare all cards in the middle
+        for (let pos = 1; pos < timelineState.length; pos++) {
+          const compareAnswer = timelineState[pos].properties.answer;
+
+          if (answer > compareAnswer) {
+            return pos;
+          }
+        }
+      } else {
+        // if there is only one card in the timeline, then
+        const compareAnswer = timelineState[0].properties.answer;
+        return answer <= compareAnswer ? 0 : 1;
       }
-    ])
+    }
+
+    const isPlacedCorrectly = (answer, pos) => {
+      return getCorrectPosition(answer) === pos;
+    }
+
+    const cardWidth = 180;
+    const position = Math.floor(timelineMouseX / cardWidth);
+
+    let newTimelineState = [...timelineState];
+
+    let card = {
+      id: timelineState.length,
+      properties: { ...cardProperties },
+      placed_correctly: isPlacedCorrectly(cardProperties.answer, position)
+    };
+
+    // insert the card to the calculated index in timeline
+    newTimelineState.splice(position, 0, card);
+
+    // commit changes
+    setTimelineState(newTimelineState);
+
+    console.log(timelineState);
   }
 
   // set helping states when the card starts being moved
   const startMoving = () => {
-    setBeingMoved(true);
-    setHoldingCard(true);
-    // save the original mouse and card position
-    setSavedMousePos(mousePos);
-    setBasePos({x: cardRef.current.offsetLeft, y: cardRef.current.offsetTop});
+    // check if the card can be held <=> is in the deck
+    if (setHoldingCard !== undefined) {
+      setBeingMoved(true);
+      setHoldingCard(true);
+      // save the original mouse and card position
+      setSavedMousePos(mousePos);
+      setBasePos({x: cardRef.current.offsetLeft, y: cardRef.current.offsetTop});
+    }
   }
 
   // stop movement
   const endMoving = () => {
-    setBeingMoved(false);
-    setHoldingCard(false);
-    if (mouseOverTimeline) {
-      // add the moved card to the timeline
-      addCardToTimeline();
-      // generate new properties
-      setProperties();
-    }
+    if (setHoldingCard !== undefined) {
+      setBeingMoved(false);
+      setHoldingCard(false);
+      if (mouseOverTimeline) {
+        // add the moved card to the timeline
+        addCardToTimeline();
+        // generate new properties
+        setProperties();
+      }
 
-    // move card back to deck
-    cardRef.current.style.left = `${basePos.x}px`;
-    cardRef.current.style.top = `${basePos.y}px`;
+      // move card back to deck
+      cardRef.current.style.left = `${basePos.x}px`;
+      cardRef.current.style.top = `${basePos.y}px`;
+    }
   }
 
   // card movement

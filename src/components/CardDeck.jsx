@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import classNames from 'classnames';
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import { OptionsContext } from '../App';
 import { colorVariables } from './BaseComponents';
 import Card from './Card';
@@ -17,18 +17,22 @@ const CardDeckStyledComponent = styled.div`
   }
 `;
 
-const CardDeck = ({ mouseOverTimeline, setHoldingCard }) => {
+const CardDeck = ({ mouseOverTimeline, timelineMouseX, setHoldingCard }) => {
   const options = useContext(OptionsContext);
+  const cardDeckRef = useRef(null);
 
   return (
     <CardDeckStyledComponent
+      ref={cardDeckRef}
       className={classNames({
         'dark': options.dark_mode
       })}
     >
       <Card
         mouseOverTimeline={mouseOverTimeline}
+        timelineMouseX={timelineMouseX}
         setHoldingCard={setHoldingCard}
+        cardDeckRef={cardDeckRef}
       />
     </CardDeckStyledComponent>
   );
