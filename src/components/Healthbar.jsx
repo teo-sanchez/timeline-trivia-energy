@@ -16,10 +16,10 @@ const Heart = styled.div`
 `;
 
 // healthbar component
-const Healthbar = () => {
+const Healthbar = ({ health }) => {
   return (
     <HealthbarStyledComponent>
-      {[...Array(3).keys()].map(id => (
+      {[...Array(health).keys()].map(id => (
         <Heart key={id} />
       ))}
     </HealthbarStyledComponent>

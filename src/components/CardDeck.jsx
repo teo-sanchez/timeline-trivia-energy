@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import classNames from 'classnames';
-import { useContext, useRef } from 'react';
+import { useContext } from 'react';
 import { OptionsContext } from '../App';
 import { colorVariables } from './BaseComponents';
 import Card from './Card';
@@ -17,13 +17,11 @@ const CardDeckStyledComponent = styled.div`
   }
 `;
 
-const CardDeck = ({ mouseOverTimeline, timelineMouseX, setHoldingCard }) => {
+const CardDeck = ({ mouseOverTimeline, timelineMouseX, setHoldingCard, health, setHealth }) => {
   const options = useContext(OptionsContext);
-  const cardDeckRef = useRef(null);
 
   return (
     <CardDeckStyledComponent
-      ref={cardDeckRef}
       className={classNames({
         'dark': options.dark_mode
       })}
@@ -32,7 +30,8 @@ const CardDeck = ({ mouseOverTimeline, timelineMouseX, setHoldingCard }) => {
         mouseOverTimeline={mouseOverTimeline}
         timelineMouseX={timelineMouseX}
         setHoldingCard={setHoldingCard}
-        cardDeckRef={cardDeckRef}
+        health={health}
+        setHealth={setHealth}
       />
     </CardDeckStyledComponent>
   );

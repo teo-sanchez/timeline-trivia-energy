@@ -62,7 +62,7 @@ const NavbarSection = styled.div`
 `;
 
 // navbar component
-const Navbar = ({ sidebarOpened, setSidebarOpened }) => {
+const Navbar = ({ sidebarOpened, setSidebarOpened, health }) => {
   const options = useContext(OptionsContext);
 
   return (
@@ -89,7 +89,9 @@ const Navbar = ({ sidebarOpened, setSidebarOpened }) => {
       </NavbarSection>
 
       <NavbarSection className="right">
-        <Healthbar />
+        <Healthbar
+          health={health}
+        />
       </NavbarSection>
     </NavbarStyledComponent>
   );

@@ -22,6 +22,7 @@ export default function App() {
   const [holdingCard, setHoldingCard] = useState(false);
   const [timelineState, setTimelineState] = useState([]);
   const [timelineMouseX, setTimelineMouseX] = useState(0);
+  const [health, setHealth] = useState(3);
   const [options, setOptions] = useState(null);
 
   // set default options if there are none
@@ -58,6 +59,7 @@ export default function App() {
                   <Navbar
                     sidebarOpened={sidebarOpened}
                     setSidebarOpened={setSidebarOpened}
+                    health={health}
                   />
 
                   <CenterContainer className="app">
@@ -65,6 +67,8 @@ export default function App() {
                       mouseOverTimeline={mouseOverTimeline}
                       timelineMouseX={timelineMouseX}
                       setHoldingCard={setHoldingCard}
+                      health={health}
+                      setHealth={setHealth}
                     />
 
                     <Timeline

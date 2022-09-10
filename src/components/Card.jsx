@@ -89,7 +89,7 @@ const CardStyledComponent = styled.div`
   }
 `;
 
-const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, setHoldingCard, timelineMouseX }) => {
+const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, setHoldingCard, timelineMouseX, health, setHealth }) => {
   const options = useContext(OptionsContext);
   const [timelineState, setTimelineState] = [useContext(TimelineContextState), useContext(TimelineContextUpdater)];
   const cardRef = useRef(null);
@@ -181,6 +181,11 @@ const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, setHoldi
       properties: { ...cardProperties },
       placed_correctly: isPlacedCorrectly(cardProperties.answer, position)
     };
+
+    // if the card isn't correct, take 1 health
+    if (!card.placed_correctly) {
+      setHealth(health-1);
+    }
 
     // insert card to the correct position regardless of answer correctness
     const correctPosition = getCorrectPosition(cardProperties.answer);
