@@ -87,6 +87,10 @@ const CardStyledComponent = styled.div`
   &:not(:first-of-type) {
     margin-left: 20px;
   }
+
+  &:last-of-type {
+    margin-right: 180px;
+  }
 `;
 
 const Card = ({ mouseOverTimeline, setHoldingCard, properties, placed, placedCorrectly, timelineMouseX,

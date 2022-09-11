@@ -6,6 +6,10 @@
   font-family: 'Inter';
 }
 
+body {
+  overflow: hidden;
+}
+
 /* scrollbar */
 ::-webkit-scrollbar {
   height: 8px;
