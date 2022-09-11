@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import classNames from 'classnames';
 import { useContext, useEffect, useRef, useState } from 'react';
+import { useWindowSize } from 'react-use';
 import { OptionsContext, TimelineContextState, TimelineContextUpdater, CardsJsonContext } from '../App';
 import { colorVariables } from './BaseComponents';
 import useMouse from '../hooks/useMouse';
@@ -93,8 +94,8 @@ const CardStyledComponent = styled.div`
   }
 `;
 
-const Card = ({ mouseOverTimeline, setHoldingCard, properties, placed, placedCorrectly, timelineMouseX,
-                health, setHealth, score, setScore }) => {
+const Card = ({ deckRef, mouseOverTimeline, setHoldingCard, properties, placed, placedCorrectly,
+                timelineMouseX, health, setHealth, score, setScore }) => {
   const options = useContext(OptionsContext);
   const [timelineState, setTimelineState] = [useContext(TimelineContextState), useContext(TimelineContextUpdater)];
   const cardRef = useRef(null);
@@ -209,6 +210,11 @@ const Card = ({ mouseOverTimeline, setHoldingCard, properties, placed, placedCor
     setTimelineState(newTimelineState);
   }
 
+  const moveCard = (x, y) => {
+    cardRef.current.style.left = `${x}px`;
+    cardRef.current.style.top = `${y}px`;
+  }
+
   // set helping states when the card starts being moved
   const startMoving = () => {
     // check if the card can be held <=> is in the deck
@@ -234,8 +240,7 @@ const Card = ({ mouseOverTimeline, setHoldingCard, properties, placed, placedCor
       }
 
       // move card back to deck
-      cardRef.current.style.left = `${basePos.x}px`;
-      cardRef.current.style.top = `${basePos.y}px`;
+      moveCard(basePos.x, basePos.y);
     }
   }
 
@@ -252,10 +257,26 @@ const Card = ({ mouseOverTimeline, setHoldingCard, properties, placed, placedCor
         y: basePos.y + change.y
       }
 
-      cardRef.current.style.left = `${currentPos.x}px`;
-      cardRef.current.style.top = `${currentPos.y}px`;
+      moveCard(currentPos.x, currentPos.y);
     }
   }, [mousePos]);
+
+  // on window resize, move card back to deck position
+  const windowSize = useWindowSize();
+
+  useEffect(() => {
+    if (deckRef !== undefined) {
+      if (deckRef.current !== null) {
+        // calculate card's position in the deck
+        const startPos = {
+          x: deckRef.current.offsetLeft + 20,
+          y: deckRef.current.offsetTop + 20 
+        };
+
+        moveCard(startPos.x, startPos.y);
+      }
+    }
+  }, [windowSize]);
 
   return (
     <CardStyledComponent

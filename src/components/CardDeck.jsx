@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import classNames from 'classnames';
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import { OptionsContext } from '../App';
 import { colorVariables } from './BaseComponents';
 import Card from './Card';
@@ -20,14 +20,17 @@ const CardDeckStyledComponent = styled.div`
 const CardDeck = ({ mouseOverTimeline, setHoldingCard, timelineMouseX, health, setHealth,
                     score, setScore }) => {
   const options = useContext(OptionsContext);
+  const deckRef = useRef(null);
 
   return (
     <CardDeckStyledComponent
+      ref={deckRef}
       className={classNames({
         'dark': options.dark_mode
       })}
     >
       <Card
+        deckRef={deckRef}
         mouseOverTimeline={mouseOverTimeline}
         setHoldingCard={setHoldingCard}
         timelineMouseX={timelineMouseX}
