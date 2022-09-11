@@ -176,8 +176,8 @@ const Card = ({ mouseOverTimeline, setHoldingCard, properties, placed, placedCor
     const position = (() => {
       const realPosition = Math.floor(timelineMouseX / cardWidth);
 
-      if (realPosition > timelineState.length) {
-        return timelineState.length;
+      if (realPosition > timelineState.length-1) {
+        return timelineState.length-1;
       } else {
         return realPosition;
       }
