@@ -86,7 +86,7 @@ const ArrowMove = styled.div`
   }
 `;
 
-const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, setTimelineMouseX }) => {
+const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, timelineMouseX, setTimelineMouseX, holdingCard }) => {
   const options = useContext(OptionsContext);
   const cardsJson = useContext(CardsJsonContext);
   const [timelineState, setTimelineState] = [useContext(TimelineContextState), useContext(TimelineContextUpdater)];
@@ -114,17 +114,17 @@ const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, setTimelineMouseX }
 
   /* onMouseOver cannot be used as the user is already hovering over a card,
      therefore we need to catch the correct position manually */
-  const getTimelinePosition = () => {
+  const getRefPosition = (ref) => {
     return {
-      x: timelineRef.current.offsetLeft,
-      y: timelineRef.current.offsetTop
+      x: ref.current.offsetLeft,
+      y: ref.current.offsetTop
     };
   }
 
-  const getTimelineSize = () => {
+  const getRefSize = (ref) => {
     return {
-      width: timelineRef.current.offsetWidth,
-      height: timelineRef.current.offsetHeight
+      width: ref.current.offsetWidth,
+      height: ref.current.offsetHeight
     };
   }
 
@@ -138,12 +138,19 @@ const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, setTimelineMouseX }
     return false;
   }
 
+  /* alternative in case hover action can't be catched using onMouseOver
+     for example when user is holding a card */
+  const getHoverState = (ref) => {
+    const {x: rectX, y: rectY} = getRefPosition(ref);
+    const {x: pointX, y: pointY} = mousePos;
+    const {width, height} = getRefSize(ref);
+
+    return pointInRectangle(pointX, pointY, rectX, rectY, width, height);
+  }
+
   // check if cursor is over the timeline on each render
   useEffect(() => {
-    const {x: rectX, y: rectY} = getTimelinePosition();
-    const {width, height} = getTimelineSize();
-    const {x: pointX, y: pointY} = mousePos;
-    setMouseOverTimeline(pointInRectangle(pointX, pointY, rectX, rectY, width, height));
+    setMouseOverTimeline(getHoverState(timelineRef));
   }, [mousePos]);
 
   // scrolling
@@ -173,7 +180,6 @@ const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, setTimelineMouseX }
 
     if (timelineRef.current !== null) {
       const contentDoesNotFit = timelineRef.current.scrollWidth - 20 > window.innerWidth*0.8 + timelineScrollX;
-      console.log(timelineRef.current.offsetWidth);
 
       if (contentDoesNotFit) {
         arrows.push('right');
@@ -197,6 +203,41 @@ const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, setTimelineMouseX }
     scrollTimeline(200);
   }
 
+  // card placement preview
+  useEffect(() => {
+    if (holdingCard) {
+      let placePosition = Math.floor(timelineMouseX / 180);
+      
+      if (placePosition > timelineState.length) {
+        placePosition = timelineState.length;
+      }
+
+      // create a fake card
+      const fakeCard = {
+        id: (-1) * timelineState.length,
+        fake: true,
+        properties: {
+          title: '',
+          answer: 0
+        }
+      };
+
+      // remove all fake cards from the timeline
+      let newTimelineState = timelineState.filter(card => !card.fake);
+
+      // add the fake card to the timeline
+      newTimelineState.splice(placePosition, 0, fakeCard);
+      setTimelineState(newTimelineState);
+    }
+  }, [timelineMouseX]);
+
+  // remove placeholder cards when not hovering over timeline
+  useEffect(() => {
+    if (!mouseOverTimeline) {
+      setTimelineState(timelineState.filter(card => !card.fake));
+    }
+  }, [mouseOverTimeline])
+
   return (
     <div>
       <TimelineStyledComponent
@@ -206,12 +247,18 @@ const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, setTimelineMouseX }
         })}
       >
         {timelineState.map(card => (
-          <Card 
-            key={card.id}
-            properties={card.properties}
-            placed={true}
-            placedCorrectly={card.placed_correctly}
-          />
+          !card.fake ? (
+            <Card 
+              key={card.id}
+              properties={card.properties}
+              placed={true}
+              placedCorrectly={card.placed_correctly}
+            />
+          ) : (
+            <FakeCard
+              key={card.id}
+            />
+          )
         ))}
       </TimelineStyledComponent>
 

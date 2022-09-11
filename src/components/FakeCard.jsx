@@ -41,7 +41,7 @@ const FakeCard = () => {
         'dark': options.dark_mode
       })}
     >
-      <span class="material-symbols-outlined">
+      <span className="material-symbols-outlined">
         add
       </span>
     </FakeCardStyledComponent>

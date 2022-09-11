@@ -20,6 +20,7 @@ export default function App() {
 
   const [sidebarOpened, setSidebarOpened] = useState(false);
   const [mouseOverTimeline, setMouseOverTimeline] = useState(false);
+  const [holdingCard, setHoldingCard] = useState(false);
   const [timelineState, setTimelineState] = useState([]);
   const [timelineMouseX, setTimelineMouseX] = useState(0);
   const [health, setHealth] = useState(3);
@@ -84,6 +85,7 @@ export default function App() {
                   <CenterContainer className="app">
                     <CardDeck
                       mouseOverTimeline={mouseOverTimeline}
+                      setHoldingCard={setHoldingCard}
                       timelineMouseX={timelineMouseX}
                       health={health}
                       setHealth={setHealth}
@@ -94,7 +96,9 @@ export default function App() {
                     <Timeline
                       mouseOverTimeline={mouseOverTimeline}
                       setMouseOverTimeline={setMouseOverTimeline}
+                      timelineMouseX={timelineMouseX}
                       setTimelineMouseX={setTimelineMouseX}
+                      holdingCard={holdingCard}
                     />
                   </CenterContainer>
 

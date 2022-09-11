@@ -89,7 +89,7 @@ const CardStyledComponent = styled.div`
   }
 `;
 
-const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, timelineMouseX,
+const Card = ({ mouseOverTimeline, setHoldingCard, properties, placed, placedCorrectly, timelineMouseX,
                 health, setHealth, score, setScore }) => {
   const options = useContext(OptionsContext);
   const [timelineState, setTimelineState] = [useContext(TimelineContextState), useContext(TimelineContextUpdater)];
@@ -154,8 +154,12 @@ const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, timeline
 
   // add current card to the timeline
   const addCardToTimeline = () => {
+    // remove card preview
+    let cleanTimelineState = timelineState.filter(card => !card.fake);
+    setTimelineState(cleanTimelineState);
+
     const getCorrectPosition = (answer) => {
-      const currentAnswers = timelineState.map(card => card.properties.answer);
+      const currentAnswers = cleanTimelineState.map(card => card.properties.answer);
       const sortedAnswers = [...currentAnswers, answer].sort((a, b) => a - b);
       return sortedAnswers.indexOf(answer);
     }
@@ -190,6 +194,9 @@ const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, timeline
       setHealth(health-1);
     }
 
+    // remove placeholder cards
+    newTimelineState = newTimelineState.filter(card => !card.fake);
+
     // insert card to the correct position regardless of answer correctness
     const correctPosition = getCorrectPosition(cardProperties.answer);
     newTimelineState.splice(correctPosition, 0, card);
@@ -203,6 +210,7 @@ const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, timeline
     // check if the card can be held <=> is in the deck
     if (!placed) {
       setBeingMoved(true);
+      setHoldingCard(true);
       // save the original mouse and card position
       setSavedMousePos(mousePos);
       setBasePos({x: cardRef.current.offsetLeft, y: cardRef.current.offsetTop});
@@ -213,6 +221,7 @@ const Card = ({ mouseOverTimeline, properties, placed, placedCorrectly, timeline
   const endMoving = () => {
     if (!placed) {
       setBeingMoved(false);
+      setHoldingCard(false);
       if (mouseOverTimeline) {
         // add the moved card to the timeline
         addCardToTimeline();
