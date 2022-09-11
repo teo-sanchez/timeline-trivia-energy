@@ -2,7 +2,7 @@ import { useState, useContext, useRef, useEffect } from 'react';
 import { CardsJsonContext, OptionsContext, TimelineContextState, TimelineContextUpdater } from '../App';
 import styled from 'styled-components';
 import classNames from 'classnames';
-import { colorVariables } from './BaseComponents';
+import { colorVariables, Icon } from './BaseComponents';
 import Card from './Card';
 import FakeCard from './FakeCard';
 import useMouse from '../hooks/useMouse';
@@ -10,6 +10,7 @@ import { useScroll } from 'react-use';
 
 const TimelineStyledComponent = styled.div`
   position: absolute;
+  z-index: 100;
   left: 10vw;
   bottom: 20px;
   width: calc(80vw - 40px);
@@ -19,26 +20,68 @@ const TimelineStyledComponent = styled.div`
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  scroll-behavior: smooth;
 
-  &::-webkit-scrollbar-thumb {
-    background-color: ${colorVariables.light_darker};
-    border: 1px solid ${colorVariables.light_darkest};
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: ${colorVariables.light_darkest};
+  &::-webkit-scrollbar-track {
+    height: 0px;
   }
 
   &.dark {
     border: 1px solid ${colorVariables.darker_darkest};
+  }
+`;
 
-    &::-webkit-scrollbar-thumb {
-      background-color: ${colorVariables.darkest};
-      border: 1px solid ${colorVariables.darker_darkest};
+const TimelineControls = styled.div`
+  position: absolute;
+  z-index: 200;
+  left: 10vw;
+  bottom: 20px;
+  width: calc(80vw - 40px);
+  height: 240px;
+  padding: 20px;
+`;
+
+const ArrowMove = styled.div`
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  user-select: none;
+  cursor: pointer;
+
+  span.material-symbols-outlined {
+    position: absolute;
+    line-height: 280px;
+    color: ${colorVariables.lightest};
+    font-size: 36px;
+  }
+
+  &.left {
+    left: 0;
+    background: linear-gradient(90deg, rgba(26,26,26,0.2) 0%, rgba(26,26,26,0) 100%);
+
+    span.material-symbols-outlined {
+      left: 20px;
+    }
+  }
+
+  &.right {
+    right: 0;
+    background: linear-gradient(90deg, rgba(26,26,26,0.0) 0%, rgba(26,26,26,0.2) 100%);
+
+    span.material-symbols-outlined {
+      right: 20px;
+    }
+  }
+
+  &.dark {
+    // darker gradient (0.5 opacity instead of 0.2)
+    &.left {
+      background: linear-gradient(90deg, rgba(26,26,26,0.5) 0%, rgba(26,26,26,0) 100%);
     }
 
-    &::-webkit-scrollbar-thumb:hover {
-      background-color: ${colorVariables.darker_darkest};
+    &.right {
+      background: linear-gradient(90deg, rgba(26,26,26,0.0) 0%, rgba(26,26,26,0.5) 100%);
     }
   }
 `;
@@ -121,22 +164,81 @@ const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, setTimelineMouseX }
     }
   }, [mousePos]);
 
+  const showArrows = () => {
+    let arrows = [];
+
+    if (timelineScrollX > 0) {
+      arrows.push('left');
+    }
+
+    if (timelineRef.current !== null) {
+      const contentDoesNotFit = timelineRef.current.scrollWidth - 20 > window.innerWidth*0.8 + timelineScrollX;
+      console.log(timelineRef.current.offsetWidth);
+
+      if (contentDoesNotFit) {
+        arrows.push('right');
+      }
+    }
+
+    return arrows;
+  };
+
+  const scrollTimeline = (change) => {
+    const currentScroll = timelineRef.current.scrollLeft;
+    const newScroll = currentScroll + change;
+    timelineRef.current.scrollLeft = newScroll;
+  }
+
+  const scrollLeft = () => {
+    scrollTimeline(-200);
+  }
+
+  const scrollRight = () => {
+    scrollTimeline(200);
+  }
+
   return (
-    <TimelineStyledComponent
-      ref={timelineRef}
-      className={classNames({
-        'dark': options.dark_mode
-      })}
-    >
-      {timelineState.map(card => (
-        <Card 
-          key={card.id}
-          properties={card.properties}
-          placed={true}
-          placedCorrectly={card.placed_correctly}
-        />
-      ))}
-    </TimelineStyledComponent>
+    <div>
+      <TimelineStyledComponent
+        ref={timelineRef}
+        className={classNames({
+          'dark': options.dark_mode
+        })}
+      >
+        {timelineState.map(card => (
+          <Card 
+            key={card.id}
+            properties={card.properties}
+            placed={true}
+            placedCorrectly={card.placed_correctly}
+          />
+        ))}
+      </TimelineStyledComponent>
+
+      <TimelineControls>
+        { showArrows().includes('left') && (
+          <ArrowMove
+            className={classNames("left", {
+              'dark': options.dark_mode
+            })}
+            onClick={scrollLeft}
+          >
+            <Icon>arrow_back</Icon>
+          </ArrowMove>
+        )}
+
+        { showArrows().includes('right') && (
+          <ArrowMove
+            className={classNames("right", {
+              'dark': options.dark_mode
+            })}
+            onClick={scrollRight}
+          >
+            <Icon>arrow_forward</Icon>
+          </ArrowMove>
+        )}
+      </TimelineControls>
+    </div>
   );
 }
  
