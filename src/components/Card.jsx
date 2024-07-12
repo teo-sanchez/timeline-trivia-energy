@@ -196,7 +196,7 @@ const Card = ({ deckRef, mouseOverTimeline, setHoldingCard, properties, placed, 
     if (card.placed_correctly) {
       setScore(score+1);
     } else {
-      setHealth(health-1);
+      setHealth(health);
     }
 
     // remove placeholder cards

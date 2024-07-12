@@ -1,7 +1,7 @@
 import { colorVariables, Icon } from './BaseComponents';
 import { useContext } from 'react';
 import { OptionsContext } from '../App';
-import Healthbar from './Healthbar';
+import Scorebar from './Scorebar';
 import styled from 'styled-components';
 import classNames from 'classnames';
 
@@ -62,7 +62,7 @@ const NavbarSection = styled.div`
 `;
 
 // navbar component
-const Navbar = ({ sidebarOpened, setSidebarOpened, health, gameover, resetGame }) => {
+const Navbar = ({ sidebarOpened, setSidebarOpened, health, score, gameover, resetGame }) => {
   const options = useContext(OptionsContext);
 
   const sidebarSwitchAction = () => {
@@ -96,16 +96,17 @@ const Navbar = ({ sidebarOpened, setSidebarOpened, health, gameover, resetGame }
       </NavbarSection>
 
       <NavbarSection>
-        Timeline Trivia
+        Timeline Trivia: energy and human societies
       </NavbarSection>
 
       <NavbarSection className="right">
-        <Healthbar
-          health={health}
+        <Scorebar
+          score={score}
+          darkMode={options.dark_mode} // Pass dark mode option to Scorebar
         />
       </NavbarSection>
     </NavbarStyledComponent>
   );
 }
- 
+
 export default Navbar;

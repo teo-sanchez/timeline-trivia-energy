@@ -77,7 +77,7 @@ export default function App() {
                   <Navbar
                     sidebarOpened={sidebarOpened}
                     setSidebarOpened={setSidebarOpened}
-                    health={health}
+                    score={score}
                     gameover={gameover}
                     resetGame={resetGame}
                   />
