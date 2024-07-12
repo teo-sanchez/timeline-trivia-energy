@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import classNames from 'classnames';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { useWindowSize } from 'react-use';
-import { OptionsContext, TimelineContextState, TimelineContextUpdater, CardsJsonContext } from '../App';
+import { OptionsContext, TimelineContextState, TimelineContextUpdater } from '../App';
 import { colorVariables } from './BaseComponents';
 import useMouse from '../hooks/useMouse';
 
@@ -94,46 +94,20 @@ const CardStyledComponent = styled.div`
   }
 `;
 
-const Card = ({ deckRef, mouseOverTimeline, setHoldingCard, properties, placed, placedCorrectly,
+const Card = ({ cardData, drawNextCard, deckRef, mouseOverTimeline, setHoldingCard, properties, placed, placedCorrectly,
                 timelineMouseX, health, setHealth, score, setScore }) => {
   const options = useContext(OptionsContext);
   const [timelineState, setTimelineState] = [useContext(TimelineContextState), useContext(TimelineContextUpdater)];
   const cardRef = useRef(null);
 
-  const cardsJson = useContext(CardsJsonContext);
   const [cardProperties, setCardProperties] = useState({});
-
-  const getRandomCard = () => {
-    const cardIndex = Math.floor(Math.random() * cardsJson.length);
-    const newCard = cardsJson[cardIndex];
-    // check if selected card is already in the timeline; we don't want that
-    const alreadyExists = timelineState.some(card => card.properties.title === newCard.title);
-
-    if (!alreadyExists) {
-      return newCard;
-    } else {
-      // if the card already exists, pick a new one
-      return getRandomCard();
-    }
-  }
 
   // set card properties
   const setProperties = (defaultProperties) => {
-    // if no properties are set, set to random card
+    // if no properties are set, set to cardData
     if (defaultProperties === undefined) {
-      const randomCard = getRandomCard();
-      
-      /*
-        keys:
-          type - shown in card footer; can also be used as a question
-          title - shown in card header
-          description - below title
-          answer - used to decide whether the user was correct
-          imagelink - link to related image
-      */
-
       setCardProperties({
-        ...randomCard
+        ...cardData
       });
     } else {
       setCardProperties({
@@ -150,7 +124,7 @@ const Card = ({ deckRef, mouseOverTimeline, setHoldingCard, properties, placed, 
       // otherwise set random properties
       setProperties();
     }
-  }, []);
+  }, [cardData]);
 
   const mousePos = useMouse();
   const [beingMoved, setBeingMoved] = useState(false);
@@ -194,7 +168,7 @@ const Card = ({ deckRef, mouseOverTimeline, setHoldingCard, properties, placed, 
 
     // if the card is correct, add 1 to score; otherwise, take 1 heart
     if (card.placed_correctly) {
-      setScore(score+1);
+      setScore(score + 1);
     } else {
       setHealth(health);
     }
@@ -208,6 +182,7 @@ const Card = ({ deckRef, mouseOverTimeline, setHoldingCard, properties, placed, 
 
     // commit changes
     setTimelineState(newTimelineState);
+    drawNextCard();
   }
 
   const moveCard = (x, y) => {
@@ -289,18 +264,34 @@ const Card = ({ deckRef, mouseOverTimeline, setHoldingCard, properties, placed, 
       onMouseUp={endMoving}
     >
       <div className="card-header">
-        <h2>{ cardProperties.title }</h2>
-        <p>{ cardProperties.description }</p>
+        {placed ? (
+          <a href={cardProperties.wikipediaLink} target="_blank" rel="noopener noreferrer">
+            <h2>{cardProperties.title}</h2>
+          </a>
+        ) : (
+          <h2>{cardProperties.title}</h2>
+        )}
+        <p>{cardProperties.description}</p>
       </div>
 
-      <div
-        className="image"
-        style={{
-          backgroundImage: `url(${cardProperties.imagelink})`
-        }}>
-      </div>
+      {placed ? (
+        <a href={cardProperties.wikipediaLink} target="_blank" rel="noopener noreferrer">
+          <div
+            className="image"
+            style={{
+              backgroundImage: `url(${cardProperties.imagelink})`
+            }}
+          />
+        </a>
+      ) : (
+        <div
+          className="image"
+          style={{
+            backgroundImage: `url(${cardProperties.imagelink})`
+          }}
+        />
+      )}
 
-      { /* change the footer's color based on correctness of the answer */ }
       <div
         className={classNames(
           "card-footer", {
@@ -309,8 +300,7 @@ const Card = ({ deckRef, mouseOverTimeline, setHoldingCard, properties, placed, 
           }
         )}
       >
-        { /* show either the answer or the question; depends on whether the card is placed */ }
-        { placed ? (
+        {placed ? (
           cardProperties.answer
         ) : (
           cardProperties.type

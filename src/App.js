@@ -27,6 +27,8 @@ export default function App() {
   const [score, setScore] = useState(0);
   const [gameover, setGameover] = useState(false);
   const [options, setOptions] = useState(null);
+  const [shuffledDeck, setShuffledDeck] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   // set default options if there are none
   useEffect(() => {
@@ -54,18 +56,41 @@ export default function App() {
     }
   }, [health]);
 
+  // shuffle the deck and set the initial card
+  useEffect(() => {
+    if (cardsJson) {
+      const shuffled = [...cardsJson].sort(() => Math.random() - 0.5);
+      const initialCard = shuffled[0];
+      setShuffledDeck(shuffled.slice(1)); // remove the initial card from the deck
+      setTimelineState([{
+        id: 0,
+        properties: { ...initialCard },
+        placed_correctly: true
+      }]);
+      setCurrentIndex(0);
+    }
+  }, [cardsJson]);
+
   // reset game function
   const resetGame = () => {
     setScore(0);
     setHealth(3);
-    setTimelineState([]);
     setGameover(false);
+    const shuffled = [...cardsJson].sort(() => Math.random() - 0.5);
+    const initialCard = shuffled[0];
+    setShuffledDeck(shuffled.slice(1)); // remove the initial card from the deck
+    setTimelineState([{
+      id: 0,
+      properties: { ...initialCard },
+      placed_correctly: true
+    }]);
+    setCurrentIndex(0);
   };
 
   return (
     <div className="app">
       { options && cardsJson && (
-        <CardsJsonContext.Provider value={cardsJson}>
+        <CardsJsonContext.Provider value={shuffledDeck}>
           <TimelineContextState.Provider value={timelineState}>
             <TimelineContextUpdater.Provider value={setTimelineState}>
               <OptionsContext.Provider value={options}>
@@ -91,6 +116,9 @@ export default function App() {
                       setHealth={setHealth}
                       score={score}
                       setScore={setScore}
+                      setGameover={setGameover}
+                      currentIndex={currentIndex}
+                      setCurrentIndex={setCurrentIndex}
                     />
 
                     <Timeline

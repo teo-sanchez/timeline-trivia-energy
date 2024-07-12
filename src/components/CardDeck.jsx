@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import classNames from 'classnames';
-import { useContext, useRef } from 'react';
-import { OptionsContext } from '../App';
+import { useContext } from 'react';
+import { OptionsContext, CardsJsonContext } from '../App';
 import { colorVariables } from './BaseComponents';
 import Card from './Card';
 
@@ -18,27 +18,39 @@ const CardDeckStyledComponent = styled.div`
 `;
 
 const CardDeck = ({ mouseOverTimeline, setHoldingCard, timelineMouseX, health, setHealth,
-                    score, setScore }) => {
+                    score, setScore, setGameover, currentIndex, setCurrentIndex }) => {
   const options = useContext(OptionsContext);
-  const deckRef = useRef(null);
+  const shuffledDeck = useContext(CardsJsonContext);
+
+  const drawNextCard = () => {
+    if (currentIndex < shuffledDeck.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    } else {
+      setGameover(true);
+    }
+  };
 
   return (
     <CardDeckStyledComponent
-      ref={deckRef}
       className={classNames({
         'dark': options.dark_mode
       })}
     >
-      <Card
-        deckRef={deckRef}
-        mouseOverTimeline={mouseOverTimeline}
-        setHoldingCard={setHoldingCard}
-        timelineMouseX={timelineMouseX}
-        health={health}
-        setHealth={setHealth}
-        score={score}
-        setScore={setScore}
-      />
+      {currentIndex < shuffledDeck.length ? (
+        <Card
+          cardData={shuffledDeck[currentIndex]}
+          drawNextCard={drawNextCard}
+          mouseOverTimeline={mouseOverTimeline}
+          setHoldingCard={setHoldingCard}
+          timelineMouseX={timelineMouseX}
+          health={health}
+          setHealth={setHealth}
+          score={score}
+          setScore={setScore}
+        />
+      ) : (
+        <p>No more cards!</p>
+      )}
     </CardDeckStyledComponent>
   );
 }

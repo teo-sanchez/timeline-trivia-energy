@@ -1,5 +1,5 @@
 import { useState, useContext, useRef, useEffect } from 'react';
-import { CardsJsonContext, OptionsContext, TimelineContextState, TimelineContextUpdater } from '../App';
+import { OptionsContext, TimelineContextState, TimelineContextUpdater } from '../App';
 import styled from 'styled-components';
 import classNames from 'classnames';
 import { colorVariables, Icon } from './BaseComponents';
@@ -17,10 +17,11 @@ const TimelineStyledComponent = styled.div`
   height: 240px;
   padding: 20px;
   border: 1px solid ${colorVariables.light_darker};
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
   scroll-behavior: smooth;
+  pointer-events: all;
 
   &::-webkit-scrollbar-track {
     height: 0px;
@@ -39,6 +40,7 @@ const TimelineControls = styled.div`
   width: calc(80vw - 40px);
   height: 240px;
   padding: 20px;
+  pointer-events: none;
 `;
 
 const ArrowMove = styled.div`
@@ -48,6 +50,7 @@ const ArrowMove = styled.div`
   height: 100%;
   user-select: none;
   cursor: pointer;
+  pointer-events: auto;
 
   span.material-symbols-outlined {
     position: absolute;
@@ -88,26 +91,7 @@ const ArrowMove = styled.div`
 
 const Timeline = ({ mouseOverTimeline, setMouseOverTimeline, timelineMouseX, setTimelineMouseX, holdingCard }) => {
   const options = useContext(OptionsContext);
-  const cardsJson = useContext(CardsJsonContext);
   const [timelineState, setTimelineState] = [useContext(TimelineContextState), useContext(TimelineContextUpdater)];
-
-  // add a random card to the timeline if there aren't any
-  useEffect(() => {
-    if (timelineState.length < 1) {
-      const randomCard = cardsJson[Math.floor(Math.random() * cardsJson.length)];
-
-      setTimelineState([
-        ...timelineState,
-        {
-          id: timelineState.length,
-          properties: {
-            ...randomCard
-          },
-          placed_correctly: true
-        }
-      ]);
-    }
-  }, [timelineState]);
 
   const timelineRef = useRef(null);
   const mousePos = useMouse();
