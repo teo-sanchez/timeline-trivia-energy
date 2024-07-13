@@ -1,90 +1,235 @@
 [
     {
-        "type": "launched",
-        "title": "Webb Space Telescope",
-        "description": "space telescope",
-        "answer": 2021,
-        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/James_Webb_Space_Telescope_2009_top.jpg/1280px-James_Webb_Space_Telescope_2009_top.jpg",
-        "wikipediaLink": "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope"
+        "type": "invented",
+        "title": "Electric Light Bulb",
+        "description": "First practical electric light bulb by Joseph Swan, followed by Thomas Edison",
+        "answer": 1879,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/8/80/Edison_incandescent_lights.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Incandescent_light_bulb"
     },
     {
-        "type": "became president",
-        "title": "Joe Biden",
-        "description": "46th president of the US",
-        "answer": 2021,
-        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/800px-Joe_Biden_presidential_portrait.jpg",
-        "wikipediaLink": "https://en.wikipedia.org/wiki/Joe_Biden"
+        "type": "invented",
+        "title": "First Nuclear Reactor",
+        "description": "First artificial nuclear reactor: Chicago Pile-1",
+        "answer": 1942,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Stagg_Field_reactor.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Chicago_Pile-1"
     },
     {
         "type": "happened",
-        "title": "Brexit",
-        "description": "withdrawal of the UK from the EU",
+        "title": "Chernobyl disaster",
+        "description": "Nuclear power plan disaster in (then) Soviet Union, now Ukraine causing about 4000 deaths",
+        "answer": 1986,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/IAEA_02790015_%285613115146%29.jpg/1024px-IAEA_02790015_%285613115146%29.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Chernobyl_disaster"
+    },
+    {
+        "type": "happened",
+        "title": "Fukushima disaster",
+        "description": "Nuclear power plant accident in Japan, leading to 1 confirmed death from radiation",
+        "answer": 2011,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Fukushima_I_by_Digital_Globe.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Fukushima_Daiichi_nuclear_disaster"
+    },
+    {
+        "type": "launched",
+        "title": "ITER Project",
+        "description": "International Thermonuclear Experimental Reactor project began.",
+        "answer": 2007,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/ITER_Exhibit_%2801810402%29_%2812219071813%29_%28cropped%29.jpg/1280px-ITER_Exhibit_%2801810402%29_%2812219071813%29_%28cropped%29.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/ITER"
+    },
+    {
+        "type": "invented",
+        "title": "World Wide Web",
+        "description": "The invention of the World Wide Web by Tim Berners-Lee.",
+        "answer": 1989,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/WWW-LetShare.svg/1920px-WWW-LetShare.svg.png",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/World_Wide_Web"
+    },
+    {
+        "type": "launched",
+        "title": "GPT-3 Release",
+        "description": "OpenAI releases GPT-3, a powerful language processing AI model.",
         "answer": 2020,
-        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Flag_of_brexit.svg/1280px-Flag_of_brexit.svg.png",
-        "wikipediaLink": "https://en.wikipedia.org/wiki/Brexit"
+        "imagelink": "https://static.vecteezy.com/system/resources/previews/022/227/364/original/openai-chatgpt-logo-icon-free-png.png",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/GPT-3"
     },
     {
-        "type": "became PM",
-        "title": "Boris Johnson",
-        "description": "former leader of the Conservative Party",
-        "answer": 2019,
-        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Boris_Johnson_official_portrait_%28cropped%29.jpg/800px-Boris_Johnson_official_portrait_%28cropped%29.jpg",
-        "wikipediaLink": "https://en.wikipedia.org/wiki/Boris_Johnson"
+        "type": "invented",
+        "title": "Watt steam machine",
+        "description": "James Watt improves the steam engine.",
+        "answer": 1776,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/0/0e/20070616_Dampfmaschine.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/James_Watt"
     },
     {
-        "type": "became president",
-        "title": "Donald Trump",
-        "description": "45th president of the US",
-        "answer": 2017,
-        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/800px-Donald_Trump_official_portrait.jpg",
-        "wikipediaLink": "https://en.wikipedia.org/wiki/Donald_Trump"
+        "type": "invented",
+        "title": "Internet",
+        "description": "The creation of ARPANET, the precursor to the modern Internet.",
+        "answer": 1969,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Arpanet_in_the_1970s.png",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/ARPANET"
     },
     {
-        "type": "released",
-        "title": "Windows 10",
-        "description": "operating system",
-        "answer": 2015,
-        "imagelink": "https://upload.wikimedia.org/wikipedia/en/5/50/Windows_10_Home_Version_21H1_Desktop.png",
-        "wikipediaLink": "https://en.wikipedia.org/wiki/Windows_10"
-    },
-    {
-        "type": "became president",
-        "title": "Barack Obama",
-        "description": "44th president of the US",
-        "answer": 2009,
-        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/800px-President_Barack_Obama.jpg",
-        "wikipediaLink": "https://en.wikipedia.org/wiki/Barack_Obama"
-    },
-    {
-        "type": "released",
-        "title": "Google Chrome",
-        "description": "web browser",
-        "answer": 2008,
-        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/1024px-Google_Chrome_icon_%28February_2022%29.svg.png",
-        "wikipediaLink": "https://en.wikipedia.org/wiki/Google_Chrome"
-    },
-    {
-        "type": "started",
-        "title": "Great Recession",
-        "description": "financial crisis",
+        "type": "invented",
+        "title": "Smartphone",
+        "description": "The release of the first iPhone, revolutionizing mobile technology.",
         "answer": 2007,
-        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/GDP_Real_Growth_in_2009.svg/1920px-GDP_Real_Growth_in_2009.svg.png",
-        "wikipediaLink": "https://en.wikipedia.org/wiki/Great_Recession"
-    },
-    {
-        "type": "released",
-        "title": "iPhone",
-        "description": "first smartphone from Apple",
-        "answer": 2007,
-        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/9/9e/IPhone_First_Generation_8GB_%283677961514%29.jpg",
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/IPhone_1st_Gen.svg/800px-IPhone_1st_Gen.svg.png",
         "wikipediaLink": "https://en.wikipedia.org/wiki/IPhone"
     },
     {
-        "type": "founded",
-        "title": "Montenegro",
-        "description": "country in Europe",
-        "answer": 2006,
-        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Flag_of_Montenegro.svg/1920px-Flag_of_Montenegro.svg.png",
-        "wikipediaLink": "https://en.wikipedia.org/wiki/Montenegro"
+        "type": "happened",
+        "title": "End of the last Ice Age",
+        "description": "leading to climate changes and human migration.",
+        "answer": -11700,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/IceAgeEarth.jpg/1920px-IceAgeEarth.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Last_Glacial_Period"
+    },
+    {
+        "type": "happened",
+        "title": "Agricultural revolution",
+        "description": "Humans transition from hunting and gathering to agriculture.",
+        "answer": -10000,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/9/93/Fertile_crescent_Neolithic_B_circa_7500_BC.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Neolithic_Revolution"
+    },
+    {
+        "type": "invented",
+        "title": "Writing",
+        "description": "The earliest forms of writing are developed in Mesopotamia.",
+        "answer": -3200,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Tableta_con_trillo.png",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/History_of_writing"
+    },
+    {
+        "type": "invented",
+        "title": "Invention of pottery",
+        "description": "Allowing for storage and cooking.",
+        "answer": -29000,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Japan%2C_Muromachi_period_-_Storage_Jar-_Tamba_Ware_-_2002.66_-_Cleveland_Museum_of_Art.tif/lossy-page1-1280px-Japan%2C_Muromachi_period_-_Storage_Jar-_Tamba_Ware_-_2002.66_-_Cleveland_Museum_of_Art.tif.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Pottery"
+    },
+    {
+        "type": "invented",
+        "title": "Windmill",
+        "description": "The windmill is invented for grinding grain and pumping water.",
+        "answer": 700,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/f/f6/KinderdijkWindmills.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Windmill"
+    },
+    {
+        "type": "invented",
+        "title": "Watermill",
+        "description": "Watermills are used for grinding grain, sawing wood, and other tasks.",
+        "answer": -250,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Braine-le-Ch%C3%A2teau_JPG02.jpg/560px-Braine-le-Ch%C3%A2teau_JPG02.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Watermill"
+    },
+    {
+        "type": "happened",
+        "title": "Industrial Revolution",
+        "description": "The Industrial Revolution begins, transforming economies and societies.",
+        "answer": 1760,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Powerloom_weaving_in_1835.jpg/2560px-Powerloom_weaving_in_1835.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Industrial_Revolution"
+    },
+    {
+        "type": "invented",
+        "title": "First oil well",
+        "description": "The first successful oil well is drilled in Titusville, USA, by Edwin Drake.",
+        "answer": 1859,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/d/da/First_Oil_Well.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Drake_Well"
+    },
+    {
+        "type": "event",
+        "title": "Domestication of livestock",
+        "description": "Humans begin domesticating goats, sheep, and cows.",
+        "answer": -11000,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Maler_der_Grabkammer_des_Menna_012.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Domestication"
+    },
+    {
+        "type": "event",
+        "title": "Construction of the Pyramids",
+        "description": "The Great Pyramids of Giza are constructed in Egypt.",
+        "answer": -2560,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/All_Gizah_Pyramids.jpg/2560px-All_Gizah_Pyramids.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Egyptian_pyramids"
+    },
+    {
+        "type": "invented",
+        "title": "Aqueduct",
+        "description": "Romans build aqueducts to transport water to cities.",
+        "answer": -312,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Pont_du_Gard_BLS.jpg/2880px-Pont_du_Gard_BLS.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Roman_aqueduct"
+    },
+    {
+        "type": "happened",
+        "title": "Black death",
+        "description": "The bubonic plague kills about 50% of Europe's population.",
+        "answer": 1346,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/5/55/Doutielt3.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Black_Death"
+    },
+    {
+        "type": "invented",
+        "title": "Dynamite",
+        "description": "Alfred Nobel invents dynamite, transforming mining and construction.",
+        "answer": 1867,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Inserting_dynamite_into_hole.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Dynamite"
+    },
+    {
+        "type": "invented",
+        "title": "Internal Combustion Engine",
+        "description": "Nikolaus Otto develops the internal combustion engine.",
+        "answer": 1876,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/8/85/Enginy_Otto-langen_1867.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Internal_combustion_engine"
+    },
+    {
+        "type": "invented",
+        "title": "Model T Ford",
+        "description": "Henry Ford introduces the Model T, revolutionizing automobile production.",
+        "answer": 1908,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/1925_Ford_Model_T_touring.jpg/1920px-1925_Ford_Model_T_touring.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Ford_Model_T"
+    },
+    {
+        "type": "invented",
+        "title": "Airplane",
+        "description": "The Wright brothers achieve the first powered flight.",
+        "answer": 1903,
+        "imagelink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyZctbcXRoDjOTKzF9dcZF09kspM7R3CC9bw&s",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Wright_brothers"
+    },
+    {
+        "type": "invented",
+        "title": "Spinning Jenny",
+        "description": "James Hargreaves invents the Spinning Jenny, revolutionizing the textile industry.",
+        "answer": 1764,
+        "imagelink": "https://upload.wikimedia.org/wikipedia/commons/8/87/Spinning_jenny.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Spinning_Jenny"
+    },
+    {
+        "type": "happened",
+        "title": "Banqiao Dam Failure",
+        "description": "The failure of the Banqiao Dam in China, causing from 30000 to 230000 deaths.",
+        "answer": 1975,
+        "imagelink": "https://globalenergy-news.com/wp-content/uploads/sites/190/2019/06/2-2.png",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Banqiao_Dam"
+    },
+    {
+        "type": "happened",
+        "title": "Vajont Dam Disaster",
+        "description": "A landslide caused the Vajont Dam in Italy to overflow, leading to about 1900 deaths.",
+        "answer": 1963,
+        "imagelink": "https://www.uab.cat/Imatge/6/237/23XXXX_imagevajont.jpg",
+        "wikipediaLink": "https://en.wikipedia.org/wiki/Vajont_Dam"
     }
+    
 ]
